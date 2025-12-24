@@ -1,3 +1,100 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero",
+      "description": "Abstract technology background",
+      "imageUrl": "https://images.unsplash.com/photo-1644325349124-d1756b79dd42?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx0ZWNobm9sb2d5JTIwYWJzdHJhY3R8ZW58MHx8fHwxNzY2NDc3NzQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "technology abstract"
+    },
+    {
+      "id": "about-us-team",
+      "description": "A professional team working together",
+      "imageUrl": "https://images.unsplash.com/photo-1603201667141-5a2d4c673378?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx0ZWFtJTIwb2ZmaWNlfGVufDB8fHx8MTc2NjQ5NjQ0NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "team office"
+    },
+    {
+      "id": "service-1",
+      "description": "Cloud computing illustration",
+      "imageUrl": "https://images.unsplash.com/photo-1667984390535-6d03cff0b11a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjbG91ZCUyMGNvbXB1dGluZ3xlbnwwfHx8fDE3NjY1NTAxMzR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cloud computing"
+    },
+    {
+      "id": "service-2",
+      "description": "Cybersecurity illustration",
+      "imageUrl": "https://images.unsplash.com/photo-1740560051549-cc6799220d48?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjeWJlcnNlY3VyaXR5JTIwY29uY2VwdHxlbnwwfHx8fDE3NjY1NjY0OTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cybersecurity concept"
+    },
+    {
+      "id": "service-3",
+      "description": "Data analytics dashboard",
+      "imageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxkYXRhJTIwZGFzaGJvYXJkfGVufDB8fHx8MTc2NjU2MzYxMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "data dashboard"
+    },
+    {
+      "id": "service-4",
+      "description": "Person working on server",
+      "imageUrl": "https://images.unsplash.com/photo-1680992046626-418f7e910589?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzZXJ2ZXIlMjByb29tfGVufDB8fHx8MTc2NjU2MTI1NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "server room"
+    },
+    {
+      "id": "service-5",
+      "description": "Video conference call",
+      "imageUrl": "https://images.unsplash.com/photo-1586980368323-8ce5db4c85ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx2aWRlbyUyMGNvbmZlcmVuY2V8ZW58MHx8fHwxNzY2NTY2NDg5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "video conference"
+    },
+    {
+      "id": "service-6",
+      "description": "IP Phone on a desk",
+      "imageUrl": "https://images.unsplash.com/photo-1642724978334-218b27d2c472?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxJUCUyMHBob25lfGVufDB8fHx8MTc2NjU2NjQ5MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "IP phone"
+    },
+    {
+      "id": "project-1",
+      "description": "A modern web application interface for a government agency.",
+      "imageUrl": "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx3ZWIlMjBhcHBsaWNhdGlvbnxlbnwwfHx8fDE3NjY1NTgwNjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "web application"
+    },
+    {
+      "id": "project-2",
+      "description": "Mobile app on a smartphone for a telecom company",
+      "imageUrl": "https://images.unsplash.com/photo-1558655146-364adaf1fcc9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtb2JpbGUlMjBhcHB8ZW58MHx8fHwxNzY2NTYyMjEwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mobile app"
+    },
+    {
+      "id": "project-3",
+      "description": "Network infrastructure setup for a large corporate office",
+      "imageUrl": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxuZXR3b3JrJTIwaW5mcmFzdHJ1Y3R1cmV8ZW58MHx8fHwxNzY2NTY2NDg5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "network infrastructure"
+    },
+    {
+      "id": "project-4",
+      "description": "Data center deployment for a military branch",
+      "imageUrl": "https://images.unsplash.com/photo-1506399558188-acca6f8cbf41?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxkYXRhJTIwY2VudGVyfGVufDB8fHx8MTc2NjUxOTYyN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "data center"
+    },
+    {
+      "id": "blog-1",
+      "description": "Person writing on a laptop with code on screen",
+      "imageUrl": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3cml0aW5nJTIwbGFwdG9wfGVufDB8fHx8MTc2NjUyODQ1OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "writing laptop"
+    },
+    {
+      "id": "blog-2",
+      "description": "Close-up of code on a screen",
+      "imageUrl": "https://images.unsplash.com/photo-1615494937408-7f4e41bf45d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb2RlJTIwc2NyZWVufGVufDB8fHx8MTc2NjUwNjUyM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "code screen"
+    },
+    {
+      "id": "blog-3",
+      "description": "Futuristic technology concept with glowing lines",
+      "imageUrl": "https://images.unsplash.com/photo-1534076355207-1717511180ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxmdXR1cmlzdGljJTIwdGVjaG5vbG9neXxlbnwwfHx8fDE3NjY1NjY0OTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "futuristic technology"
+    },
+    {
+      "id": "contact-us",
+      "description": "Modern office with people working",
+      "imageUrl": "https://images.unsplash.com/photo-1657978837950-03646a7c7b9e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtb2Rlcm4lMjBvZmZpY2V8ZW58MHx8fHwxNzY2NDkwNzMxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern office"
+    }
+  ]
 }
