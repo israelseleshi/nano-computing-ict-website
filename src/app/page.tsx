@@ -12,7 +12,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import { Spotlight } from '@/components/ui/spotlight';
 
 const services = [
   {
@@ -123,27 +122,36 @@ export default function Home() {
 
   return (
     <div className="flex flex-col">
-      <section className="h-[40rem] w-full rounded-md flex md:items-center md:justify-center bg-secondary relative overflow-hidden">
-        <Spotlight
-          className="-top-40 left-0 md:left-60 md:-top-20"
-          fill="white"
-        />
-        <div className="p-4 max-w-7xl mx-auto relative z-10 w-full text-center">
-          <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 font-headline">
-            Powering Your <br /> Digital Transformation
-          </h1>
-          <p className="mt-4 font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">
-            Nano Computing ICT Solutions delivers cutting-edge technology and expert guidance to propel your business forward.
-          </p>
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button asChild size="lg">
-              <Link href="/services">
-                Explore Services <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-            <Button asChild size="lg" variant="outline">
-              <Link href="/contact">Contact Us</Link>
-            </Button>
+      <section className="bg-secondary py-20 md:py-32">
+        <div className="container grid md:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col gap-6 items-start">
+            <h1 className="text-4xl md:text-6xl font-bold text-primary font-headline leading-tight">
+              Powering Your Digital Transformation
+            </h1>
+            <p className="text-lg text-muted-foreground">
+              Nano Computing ICT Solutions delivers cutting-edge technology and expert guidance to propel your business forward.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button asChild size="lg">
+                <Link href="/services">
+                  Explore Services <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="bg-background">
+                <Link href="/contact">Contact Us</Link>
+              </Button>
+            </div>
+          </div>
+          <div className="relative h-80 w-full lg:h-96 rounded-xl overflow-hidden shadow-2xl">
+              {heroImage && (
+                <Image
+                  src={heroImage.imageUrl}
+                  alt={heroImage.description}
+                  fill
+                  data-ai-hint={heroImage.imageHint}
+                  className="object-cover"
+                />
+              )}
           </div>
         </div>
       </section>
@@ -266,7 +274,7 @@ export default function Home() {
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
             opts={{
-              align: "start",
+              align: 'start',
               loop: true,
             }}
           >
@@ -275,21 +283,21 @@ export default function Home() {
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-1 h-full">
                     <Card className="flex flex-col bg-secondary/30 h-full">
-                        <CardContent className="p-6 flex-grow">
-                          <blockquote className="text-lg text-muted-foreground border-l-4 border-primary pl-4 italic">
-                            &quot;{testimonial.quote}&quot;
-                          </blockquote>
-                        </CardContent>
-                        <CardHeader className="flex flex-row items-center gap-4 p-6 pt-0 mt-auto">
-                          <Avatar className="w-14 h-14 border-2 border-primary">
-                            <AvatarImage src={`https://i.pravatar.cc/150?u=${testimonial.name}`} />
-                            <AvatarFallback>{testimonial.avatar}</AvatarFallback>
-                          </Avatar>
-                          <div>
-                            <CardTitle className="text-base font-bold">{testimonial.name}</CardTitle>
-                            <CardDescription>{testimonial.title}</CardDescription>
-                          </div>
-                        </CardHeader>
+                      <CardContent className="p-6 flex-grow flex items-center">
+                        <blockquote className="text-lg text-muted-foreground border-l-4 border-primary pl-4 italic">
+                          &quot;{testimonial.quote}&quot;
+                        </blockquote>
+                      </CardContent>
+                      <CardHeader className="flex flex-row items-center gap-4 p-6 pt-0 mt-auto">
+                        <Avatar className="w-14 h-14 border-2 border-primary">
+                          <AvatarImage src={`https://i.pravatar.cc/150?u=${testimonial.name}`} />
+                          <AvatarFallback>{testimonial.avatar}</AvatarFallback>
+                        </Avatar>
+                        <div>
+                          <CardTitle className="text-base font-bold">{testimonial.name}</CardTitle>
+                          <CardDescription>{testimonial.title}</CardDescription>
+                        </div>
+                      </CardHeader>
                     </Card>
                   </div>
                 </CarouselItem>
@@ -304,6 +312,3 @@ export default function Home() {
       </section>
     </div>
   );
-
-    
-
