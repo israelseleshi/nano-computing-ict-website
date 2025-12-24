@@ -42,16 +42,16 @@ const services = [
     ],
   },
   {
-    image: '/computer-network.png',
-    title: 'Computer Network Design and Installation',
+    image: '/door-access-control-systems.png',
+    title: 'Door Access Control',
     description:
-      'Professional network infrastructure design and installation to enhance your workforce productivity.',
+      'Advanced access control systems for secure entry management and monitoring.',
     points: [
-      'Business-critical application optimization',
-      'Secure internet access solutions',
-      'Mobile workforce connectivity',
-      'Guest Wi-Fi network setup',
-      'Secure and accessible network design',
+      'Biometric authentication systems',
+      'Remote access management and control',
+      'Real-time monitoring and alerts',
+      'Integration with existing security systems',
+      'Scalable solutions for any facility size',
     ],
   },
   {
@@ -68,16 +68,16 @@ const services = [
     ],
   },
   {
-    image: '/door-access-control-systems.png',
-    title: 'Door Access Control',
+    image: '/computer-network.png',
+    title: 'Computer Network Design and Installation',
     description:
-      'Advanced access control systems for secure entry management and monitoring.',
+      'Professional network infrastructure design and installation to enhance your workforce productivity.',
     points: [
-      'Biometric authentication systems',
-      'Remote access management and control',
-      'Real-time monitoring and alerts',
-      'Integration with existing security systems',
-      'Scalable solutions for any facility size',
+      'Business-critical application optimization',
+      'Secure internet access solutions',
+      'Mobile workforce connectivity',
+      'Guest Wi-Fi network setup',
+      'Secure and accessible network design',
     ],
   },
 ];
@@ -273,7 +273,7 @@ export default function Home() {
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <div className="p-1">
+                  <div className="p-1 h-full">
                     <Card className="flex flex-col bg-secondary/30 h-full">
                         <CardContent className="p-6 flex-grow">
                           <blockquote className="text-lg text-muted-foreground border-l-4 border-primary pl-4 italic">
@@ -296,8 +296,8 @@ export default function Home() {
               ))}
             </CarouselContent>
             <div className="flex justify-center gap-4 mt-8">
-              <CarouselPrevious />
-              <CarouselNext />
+              <CarouselPrevious className="h-12 w-12" />
+              <CarouselNext className="h-12 w-12" />
             </div>
           </Carousel>
         </div>
@@ -306,3 +306,4 @@ export default function Home() {
   );
 
     
+
