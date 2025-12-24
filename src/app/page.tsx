@@ -123,25 +123,30 @@ export default function Home() {
   return (
     <div className="flex flex-col">
        <section className="bg-background overflow-hidden">
-        <div className="container text-center pt-24 md:pt-32">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-primary font-headline leading-tight">
-            Powering Your Digital Transformation
-          </h1>
-          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Nano Computing ICT Solutions delivers cutting-edge technology and expert guidance to propel your business forward.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4 justify-center">
-              <Button asChild size="lg">
-                  <Link href="/services">
-                      Explore Services <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                  <Link href="/contact">Contact Us</Link>
-              </Button>
-          </div>
-        </div>
-        {heroImage && <MacbookScroll src={heroImage.imageUrl} showGradient={false} />}
+        {heroImage && <MacbookScroll 
+          src={heroImage.imageUrl} 
+          showGradient={false}
+          title={
+            <div className="text-center">
+              <h1 className="text-4xl md:text-6xl font-extrabold text-primary font-headline leading-tight">
+                Powering Your Digital Transformation
+              </h1>
+              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+                Nano Computing ICT Solutions delivers cutting-edge technology and expert guidance to propel your business forward.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4 justify-center">
+                  <Button asChild size="lg">
+                      <Link href="/services">
+                          Explore Services <ArrowRight className="ml-2 h-5 w-5" />
+                      </Link>
+                  </Button>
+                  <Button asChild size="lg" variant="outline">
+                      <Link href="/contact">Contact Us</Link>
+                  </Button>
+              </div>
+            </div>
+          }
+        />}
       </section>
 
       <section id="services" className="py-16 md:py-24 bg-background">
@@ -300,3 +305,4 @@ export default function Home() {
       </section>
     </div>
   );
+}
