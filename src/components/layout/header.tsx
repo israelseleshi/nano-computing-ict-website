@@ -26,16 +26,13 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header
-      className={cn(
-        'sticky top-0 z-50 w-full transition-all duration-300 border-b'
-      )}
-      style={{ backgroundColor: '#F8FAFC' }}
-    >
+    <header className="sticky top-0 z-50 w-full border-b bg-header">
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <div className="flex items-center">
           <Logo />
         </div>
+
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
           {NAV_LINKS.map((link) => (
             <Link
@@ -43,7 +40,7 @@ export function Header() {
               href={link.href}
               className={cn(
                 'text-sm font-medium transition-colors hover:text-primary',
-                pathname === link.href ? 'text-primary' : 'text-primary/60'
+                pathname === link.href ? 'text-primary' : 'text-primary/70'
               )}
               prefetch={false}
             >
@@ -52,11 +49,12 @@ export function Header() {
           ))}
         </nav>
         
+        {/* Mobile Navigation */}
         <div className="md:hidden">
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="outline" size="icon" className="bg-transparent hover:bg-primary/10">
-                <Menu className="h-6 w-6 text-primary" />
+              <Button variant="outline" size="icon" className="bg-transparent text-primary hover:bg-primary/10">
+                <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
             </SheetTrigger>
@@ -65,7 +63,7 @@ export function Header() {
                 <div className="flex items-center justify-between">
                     <Logo />
                     <SheetTrigger asChild>
-                        <Button variant="ghost" size="icon">
+                        <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(false)}>
                             <X className="h-6 w-6" />
                         </Button>
                     </SheetTrigger>
@@ -86,7 +84,6 @@ export function Header() {
                     </Link>
                   ))}
                 </nav>
-                
               </div>
             </SheetContent>
           </Sheet>
