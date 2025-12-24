@@ -15,7 +15,7 @@ import Image from 'next/image';
 function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2" prefetch={false}>
-      <Image src="/logo.jpg" alt="Nano Computing ICT Solutions" width={40} height={40} className="rounded-md" />
+      <Image src="/logo.jpg" alt="Nano Computing ICT Solutions" width={50} height={50} className="rounded-md" />
       <span className={cn(
         "font-medium leading-tight transition-colors text-primary hidden sm:inline-block",
         "text-sm"
@@ -31,7 +31,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 w-full transition-all duration-300'
+        'sticky top-0 z-50 w-full transition-all duration-300 border-b'
       )}
       style={{ backgroundColor: '#F8FAFC' }}
     >
@@ -46,7 +46,7 @@ export function Header() {
               href={link.href}
               className={cn(
                 'text-sm font-medium transition-colors hover:text-primary',
-                pathname === link.href ? 'text-primary' : 'text-muted-foreground'
+                pathname === link.href ? 'text-primary' : 'text-foreground/60'
               )}
               prefetch={false}
             >
@@ -58,8 +58,8 @@ export function Header() {
         <div className="md:hidden">
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="outline" size="icon" className={cn('bg-transparent text-primary hover:bg-primary/10 hover:text-primary border-primary/50')}>
-                <Menu className="h-6 w-6" />
+              <Button variant="outline" size="icon" className="bg-transparent hover:bg-primary/10">
+                <Menu className="h-6 w-6 text-primary" />
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
             </SheetTrigger>
