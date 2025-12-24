@@ -2,7 +2,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Menu, Mountain } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
@@ -10,11 +10,12 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { NAV_LINKS } from '@/lib/constants';
+import Image from 'next/image';
 
 function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2" prefetch={false}>
-      <Mountain className="h-6 w-6 text-primary" />
+      <Image src="/logo.jpg" alt="Nano Computing ICT Solutions" width={40} height={40} className="rounded-md" />
       <span className="text-xl font-bold text-primary-foreground font-headline">Nano Computing ICT Solutions</span>
     </Link>
   );

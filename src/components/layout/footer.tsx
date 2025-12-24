@@ -1,6 +1,8 @@
+
 import Link from 'next/link';
-import { Mountain, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { Facebook, Twitter, Linkedin } from 'lucide-react';
 import { NAV_LINKS } from '@/lib/constants';
+import Image from 'next/image';
 
 export function Footer() {
   return (
@@ -8,7 +10,7 @@ export function Footer() {
       <div className="container mx-auto px-4 md:px-6 py-12 grid gap-8 md:grid-cols-4">
         <div className="md:col-span-1">
           <Link href="/" className="flex items-center gap-2" prefetch={false}>
-            <Mountain className="h-6 w-6 text-primary" />
+            <Image src="/logo.jpg" alt="Nano Computing ICT Solutions" width={40} height={40} className="rounded-md" />
             <span className="text-xl font-bold font-headline">Nano Computing ICT Solutions</span>
           </Link>
           <p className="mt-2 text-sm text-muted-foreground">

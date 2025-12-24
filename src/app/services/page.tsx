@@ -1,7 +1,7 @@
+
 import type { Metadata } from 'next';
 import { PageHeader } from '@/components/page-header';
 import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { CheckCircle2 } from 'lucide-react';
 import {
   ShieldCheck,
@@ -30,7 +30,7 @@ const services = [
       'Residential and commercial solutions',
       '24/7 monitoring and surveillance',
     ],
-    imageId: 'service-2',
+    imageSrc: '/cctv.jpg',
   },
   {
     icon: <Wrench className="w-8 h-8 text-primary" />,
@@ -44,7 +44,7 @@ const services = [
       'Expert technicians with industry experience',
       'Support for wide variety of computer systems',
     ],
-    imageId: 'service-3',
+    imageSrc: '/computer-repair.jpg',
   },
   {
     icon: <Network className="w-8 h-8 text-primary" />,
@@ -58,7 +58,7 @@ const services = [
       'Guest Wi-Fi network setup',
       'Secure and accessible network design',
     ],
-    imageId: 'project-3',
+    imageSrc: '/network-design.jpg',
   },
   {
     icon: <Clock className="w-8 h-8 text-primary" />,
@@ -72,7 +72,7 @@ const services = [
       'Modern digital attendance solutions',
       'Comprehensive reporting systems',
     ],
-    imageId: 'service-6',
+    imageSrc: '/time-attendance.jpg',
   },
   {
     icon: <Fingerprint className="w-8 h-8 text-primary" />,
@@ -86,7 +86,7 @@ const services = [
       'Integration with existing security systems',
       'Scalable solutions for any facility size',
     ],
-    imageId: 'service-4',
+    imageSrc: '/access-control.jpg',
   },
 ];
 
@@ -100,9 +100,6 @@ export default function ServicesPage() {
       <section className="py-16 md:py-24 bg-background">
         <div className="container space-y-24">
           {services.map((service, index) => {
-            const image = PlaceHolderImages.find(
-              (img) => img.id === service.imageId
-            );
             const isReversed = index % 2 !== 0;
             return (
               <div
@@ -114,15 +111,12 @@ export default function ServicesPage() {
                     isReversed ? 'md:order-last' : ''
                   }`}
                 >
-                  {image && (
-                    <Image
-                      src={image.imageUrl}
-                      alt={service.title}
-                      data-ai-hint={image.imageHint}
-                      fill
-                      className="rounded-lg object-cover shadow-xl"
-                    />
-                  )}
+                  <Image
+                    src={service.imageSrc}
+                    alt={service.title}
+                    fill
+                    className="rounded-lg object-cover shadow-xl"
+                  />
                 </div>
                 <div className="prose lg:prose-lg max-w-none text-muted-foreground">
                   <div className="flex items-center gap-4 mb-4">
