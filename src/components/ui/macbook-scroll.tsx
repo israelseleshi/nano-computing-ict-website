@@ -69,9 +69,9 @@ export const MacbookScroll = ({
   return (
     <div
       ref={ref}
-      className="flex min-h-[200vh] shrink-0 scale-[0.35] transform flex-col items-center justify-start py-0 [perspective:800px] sm:scale-50 md:scale-100 md:py-24"
+      className="flex min-h-[200vh] shrink-0 scale-[0.35] transform flex-col items-center justify-start py-0 [perspective:800px] sm:scale-50 md:scale-100"
     >
-      <motion.div
+      {title && <motion.div
         style={{
           translateY: textTransform,
           opacity: textOpacity,
@@ -79,7 +79,7 @@ export const MacbookScroll = ({
         className="mb-20 text-center"
       >
         {title}
-      </motion.div>
+      </motion.div>}
       {/* Lid */}
       <Lid
         src={src}

@@ -126,26 +126,6 @@ export default function Home() {
         <MacbookScroll 
           src="/nano-tech-office-display.mp4" 
           showGradient={false}
-          title={
-            <div className="text-center">
-              <h1 className="text-4xl md:text-6xl font-extrabold text-primary font-headline leading-tight">
-                Powering Your Digital Transformation
-              </h1>
-              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-                Nano Computing ICT Solutions delivers cutting-edge technology and expert guidance to propel your business forward.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-4 justify-center">
-                  <Button asChild size="lg">
-                      <Link href="/services">
-                          Explore Services <ArrowRight className="ml-2 h-5 w-5" />
-                      </Link>
-                  </Button>
-                  <Button asChild size="lg" variant="outline">
-                      <Link href="/contact">Contact Us</Link>
-                  </Button>
-              </div>
-            </div>
-          }
         />
       </section>
 
