@@ -15,11 +15,8 @@ import Image from 'next/image';
 function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2" prefetch={false}>
-      <Image src="/logo.jpg" alt="Nano Computing ICT Solutions" width={50} height={50} className="rounded-md" />
-      <span className={cn(
-        "font-medium leading-tight transition-colors text-primary hidden sm:inline-block",
-        "text-sm"
-        )}>Nano Computing ICT Solutions</span>
+      <Image src="/logo.jpg" alt="Nano Computing ICT Solutions" width={60} height={60} className="rounded-md" />
+      <span className="font-semibold text-primary hidden sm:inline-block">Nano Computing ICT Solutions</span>
     </Link>
   );
 }
@@ -35,7 +32,7 @@ export function Header() {
       )}
       style={{ backgroundColor: '#F8FAFC' }}
     >
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
+      <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <div className="flex items-center">
           <Logo />
         </div>
@@ -46,7 +43,7 @@ export function Header() {
               href={link.href}
               className={cn(
                 'text-sm font-medium transition-colors hover:text-primary',
-                pathname === link.href ? 'text-primary' : 'text-foreground/60'
+                pathname === link.href ? 'text-primary' : 'text-primary/60'
               )}
               prefetch={false}
             >
