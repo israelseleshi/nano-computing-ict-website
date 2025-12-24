@@ -139,7 +139,7 @@ export default function Home() {
       </section>
 
       <section id="services" className="py-16 md:py-24 bg-background">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px:6">
           <Carousel
             opts={{
               align: 'start',
@@ -203,7 +203,7 @@ export default function Home() {
       </section>
 
       <section id="why-us" className="py-16 md:py-24 bg-secondary">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px:6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold tracking-tight text-primary md:text-4xl font-headline">Why Choose Nano Computing ICT Solutions?</h2>
@@ -243,7 +243,7 @@ export default function Home() {
       </section>
 
       <section id="testimonials" className="py-16 md:py-24 bg-background">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px:6">
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-3xl font-bold tracking-tight text-primary md:text-4xl font-headline">What Our Clients Say</h2>
             <p className="mt-4 text-lg text-muted-foreground">
@@ -293,5 +293,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
