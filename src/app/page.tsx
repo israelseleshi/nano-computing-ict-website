@@ -135,7 +135,7 @@ export default function Home() {
           <p className="mt-4 font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">
             Nano Computing ICT Solutions delivers cutting-edge technology and expert guidance to propel your business forward.
           </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6">
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button asChild size="lg">
               <Link href="/services">
                 Explore Services <ArrowRight className="ml-2 h-5 w-5" />

@@ -2,9 +2,9 @@
 'use client';
 
 import Link from 'next/link';
-import { Menu } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -15,9 +15,9 @@ import Image from 'next/image';
 function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2" prefetch={false}>
-      <Image src="/logo.jpg" alt="Nano Computing ICT Solutions" width={60} height={60} className="rounded-md" />
+      <Image src="/logo.jpg" alt="Nano Computing ICT Solutions" width={40} height={40} className="rounded-md" />
       <span className={cn(
-        "font-medium leading-tight transition-colors text-primary",
+        "font-medium leading-tight transition-colors text-primary hidden sm:inline-block",
         "text-sm"
         )}>Nano Computing ICT Solutions</span>
     </Link>
@@ -35,11 +35,11 @@ export function Header() {
       )}
       style={{ backgroundColor: '#F8FAFC' }}
     >
-      <div className="flex h-16 items-center justify-between">
-        <div className="pl-4 md:pl-6">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
+        <div>
           <Logo />
         </div>
-        <nav className="hidden md:flex items-center gap-6 pr-4 md:pr-6">
+        <nav className="hidden md:flex items-center gap-6">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
@@ -55,7 +55,7 @@ export function Header() {
           ))}
         </nav>
         
-        <div className="md:hidden pr-4 md:pr-6">
+        <div className="md:hidden">
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon" className={cn('bg-transparent text-primary hover:bg-primary/10 hover:text-primary border-primary/50')}>
@@ -65,7 +65,14 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="left">
               <div className="flex flex-col gap-6 p-6">
-                <Logo />
+                <div className="flex items-center justify-between">
+                    <Logo />
+                    <SheetTrigger asChild>
+                        <Button variant="ghost" size="icon">
+                            <X className="h-6 w-6" />
+                        </Button>
+                    </SheetTrigger>
+                </div>
                 <nav className="flex flex-col gap-4">
                   {NAV_LINKS.map((link) => (
                     <Link
