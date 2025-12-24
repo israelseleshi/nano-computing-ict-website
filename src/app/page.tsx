@@ -124,7 +124,7 @@ export default function Home() {
     <div className="flex flex-col">
        <section className="bg-background overflow-hidden">
         <MacbookScroll 
-          src="/hero-video.mp4" 
+          src="/nano-tech-office-display.mp4" 
           showGradient={false}
           title={
             <div className="text-center">
