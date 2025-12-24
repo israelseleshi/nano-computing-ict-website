@@ -1,0 +1,11 @@
+---
+deployment:
+  tasks:
+    - export HOME=/home/nanocomputingict
+    - export NPM_CONFIG_PREFIX=$HOME/.npm
+    - export PATH="$HOME/.npm/bin:$PATH"
+    - /bin/cp -r * /home/nanocomputingict/new.nanocomputingict.com/
+    - cd /home/nanocomputingict/new.nanocomputingict.com/
+    - npm install
+    - npm run build
+    - /usr/bin/touch tmp/restart.txt
