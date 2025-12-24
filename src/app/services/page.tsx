@@ -121,7 +121,7 @@ export default function ServicesPage() {
                   src={service.image}
                   alt={service.title}
                   fill
-                  className="rounded-lg object-cover shadow-xl"
+                  className="rounded-lg object-cover"
                 />
               </div>
             </div>

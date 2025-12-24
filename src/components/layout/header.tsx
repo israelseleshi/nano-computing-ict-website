@@ -15,7 +15,7 @@ import Image from 'next/image';
 function Logo({ isScrolled }: { isScrolled: boolean }) {
   return (
     <Link href="/" className="flex items-center gap-2" prefetch={false}>
-      <Image src="/logo.jpg" alt="Nano Computing ICT Solutions" width={40} height={40} className="rounded-md" />
+      <Image src="/logo.jpg" alt="Nano Computing ICT Solutions" width={50} height={50} className="rounded-md" />
       <span className={cn(
         "text-xl font-bold font-headline transition-colors",
         isScrolled ? 'text-primary' : 'text-white'
@@ -48,7 +48,7 @@ export function Header() {
         isScrolled ? 'bg-background/80 backdrop-blur-lg border-b' : 'bg-transparent'
       )}
     >
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
+      <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Logo isScrolled={isScrolled} />
         <nav className="hidden md:flex items-center gap-6">
           {NAV_LINKS.map((link) => (
