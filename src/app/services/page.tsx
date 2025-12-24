@@ -83,7 +83,6 @@ export default function ServicesPage() {
     <>
       <PageHeader
         title="Our Services"
-        description="We offer a comprehensive suite of ICT solutions designed to secure and streamline your operations. Explore our professional services below."
       />
       <section className="py-16 md:py-24 bg-background">
         <div className="container space-y-16">

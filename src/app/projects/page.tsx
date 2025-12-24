@@ -60,7 +60,6 @@ export default function ProjectsPage() {
     <>
       <PageHeader
         title="Our Portfolio"
-        description="We take pride in our work. Here is a selection of projects that demonstrate our expertise and commitment to delivering excellence."
       />
 
       <section className="py-16 md:py-24 bg-background">

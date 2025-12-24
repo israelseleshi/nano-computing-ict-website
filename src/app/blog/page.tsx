@@ -63,7 +63,6 @@ export default function BlogPage() {
     <>
       <PageHeader
         title="From Our Blog"
-        description="Stay updated with the latest trends, insights, and best practices in the world of technology and ICT solutions."
       />
       <section className="py-16 md:py-24 bg-background">
         <div className="container">
