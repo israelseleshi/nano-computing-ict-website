@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build --experimental-memory-less-in-worker",
-    "start": "next start",
+    "build": "NODE_ENV=production next build",
     "lint": "next lint",
     "typecheck": "tsc --noEmit"
   },
