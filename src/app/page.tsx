@@ -3,7 +3,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Cloud, Lock, Server, Users, Wifi } from 'lucide-react';
+import { ArrowRight, Lock, Users, CheckCircle2 } from 'lucide-react';
 import React from 'react';
 import Autoplay from 'embla-carousel-autoplay';
 
@@ -16,24 +16,48 @@ import { Spotlight } from '@/components/ui/spotlight';
 
 const services = [
   {
-    icon: <Server className="h-8 w-8 text-primary" />,
-    title: 'Structured Cabling',
-    description: 'End-to-end network solutions including survey, design, implementation, and maintenance.',
+    image: '/cctv-camera.png',
+    title: 'CCTV Security System',
+    description:
+      'Comprehensive security camera systems to protect your business and residential properties.',
+    points: [
+      'Complete facility security coverage',
+      'Protection from burglary and damages',
+      'Professional installation and setup',
+    ],
   },
   {
-    icon: <Wifi className="h-8 w-8 text-primary" />,
-    title: 'Wireless Networking',
-    description: 'Robust and scalable wireless solutions for seamless connectivity.',
+    image: '/computer-repair.png',
+    title: 'Computer Repair Service',
+    description:
+      'Professional computer and networking services for residential and business customers with expert technicians.',
+    points: [
+      'Comprehensive setup and troubleshooting support',
+      'Maintenance and training across all systems',
+      'Onsite repair services at your location',
+    ],
   },
   {
-    icon: <Lock className="h-8 w-8 text-primary" />,
-    title: 'Network Security',
-    description: 'Protecting your digital assets with state-of-the-art security protocols and firewalls.',
+    image: '/computer-network.png',
+    title: 'Computer Network Design and Installation',
+    description:
+      'Professional network infrastructure design and installation to enhance your workforce productivity.',
+    points: [
+      'Business-critical application optimization',
+      'Secure internet access solutions',
+      'Mobile workforce connectivity',
+    ],
   },
   {
-    icon: <Cloud className="h-8 w-8 text-primary" />,
-    title: 'Cloud & Data Center',
-    description: 'Modern data center solutions with high availability and server virtualization.',
+    image: '/time-attendance.png',
+    title: 'Time & Attendance System',
+    description:
+      'Modern time tracking and attendance management systems for accurate workforce monitoring.',
+    points: [
+      'Accurate employee work hour tracking',
+      'Sick leave and time-off monitoring',
+      'Employee performance analytics',
+    ],
   },
 ];
 
@@ -111,17 +135,39 @@ export default function Home() {
               We provide a wide range of ICT solutions to meet your business needs.
             </p>
           </div>
-          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {services.map((service) => (
-              <Card key={service.title} className="text-center transform hover:-translate-y-2 transition-transform duration-300">
-                <CardHeader>
-                  <div className="mx-auto bg-primary/10 p-4 rounded-full w-fit">{service.icon}</div>
-                  <CardTitle className="mt-4">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{service.description}</p>
-                </CardContent>
-              </Card>
+          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-2">
+            {services.map((service, index) => (
+              <div
+              key={service.title}
+              className={`grid md:grid-cols-2 gap-8 md:gap-6 items-center`}
+            >
+              <div
+                className={`relative h-60 w-full lg:h-60`}
+              >
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="rounded-lg object-cover"
+                />
+              </div>
+              <div
+                className={`prose max-w-none text-muted-foreground`}
+              >
+                <h3 className="text-xl font-bold text-primary font-headline">
+                  {service.title}
+                </h3>
+                <p className='text-sm'>{service.description}</p>
+                <ul className="space-y-1 mt-4 pl-0 text-sm">
+                  {service.points.map((point) => (
+                    <li key={point} className="flex items-start !pl-0">
+                      <CheckCircle2 className="w-4 h-4 text-primary mr-2 mt-1 flex-shrink-0" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
             ))}
           </div>
           <div className="text-center mt-12">
