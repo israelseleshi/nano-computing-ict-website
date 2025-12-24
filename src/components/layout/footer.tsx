@@ -7,13 +7,13 @@ export function Footer() {
   return (
     <footer className="bg-secondary text-secondary-foreground mt-auto">
       <div className="container mx-auto px-4 md:px-6 py-12 grid gap-12 md:grid-cols-12">
-        <div className="md:col-span-5 lg:col-span-4">
-          <Link href="/" className="flex items-center gap-2" prefetch={false}>
+        <div className="md:col-span-5 lg:col-span-4 flex flex-col items-center md:items-start text-center md:text-left">
+          <Link href="/" className="flex flex-col items-center gap-2" prefetch={false}>
             <Image src="/logo.jpg" alt="Nano Computing ICT Solutions" width={80} height={80} className="rounded-md" />
-            <span className="text-xl font-bold font-headline">Nano Computing ICT Solutions</span>
+            <span className="text-xl font-bold font-headline mt-2">Nano Computing ICT Solutions</span>
           </Link>
           <p className="mt-2 text-sm text-muted-foreground">
-            Your partner in digital transformation.
+            Your Integrated Safety Partner
           </p>
           <div className="mt-4 flex gap-4">
             <Link href="#" aria-label="Facebook" className="text-muted-foreground hover:text-primary"><Facebook size={20} /></Link>
