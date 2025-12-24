@@ -171,14 +171,14 @@ export const Lid = ({
               autoPlay
               muted
               loop
-              className="absolute inset-0 h-full w-full rounded-lg object-contain"
+              className="absolute inset-0 h-full w-full rounded-lg object-cover"
             />
           ) : (
             <Image
               src={src}
               alt="hero image"
               fill
-              className="absolute inset-0 h-full w-full rounded-lg object-contain"
+              className="absolute inset-0 h-full w-full rounded-lg object-cover"
             />
           )
         )}
@@ -316,7 +316,7 @@ export const Keypad = () => {
         </KBtn>
         <KBtn>
           <span className="block">+</span>
-          <span className="block"> = </span>
+          <span className="block"> = </span> 
         </KBtn>
         <KBtn
           className="w-10 items-end justify-end pr-[4px] pb-[2px]"
@@ -664,3 +664,5 @@ const AceternityLogo = () => {
     </svg>
   );
 };
+
+    
