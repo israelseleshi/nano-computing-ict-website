@@ -274,7 +274,7 @@ export default function Home() {
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-1">
-                    <Card className="flex flex-col bg-secondary/30">
+                    <Card className="flex flex-col bg-secondary/30 h-full">
                         <CardContent className="p-6 flex-grow">
                           <blockquote className="text-lg text-muted-foreground border-l-4 border-primary pl-4 italic">
                             &quot;{testimonial.quote}&quot;
@@ -295,6 +295,10 @@ export default function Home() {
                 </CarouselItem>
               ))}
             </CarouselContent>
+            <div className="flex justify-center gap-4 mt-8">
+              <CarouselPrevious />
+              <CarouselNext />
+            </div>
           </Carousel>
         </div>
       </section>
