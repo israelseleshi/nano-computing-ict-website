@@ -15,9 +15,9 @@ import Image from 'next/image';
 function Logo() {
   return (
     <Link href="/" className="flex items-center gap-4" prefetch={false}>
-      <Image src="/logo.jpg" alt="Nano Computing ICT Solutions" width={80} height={80} className="rounded-md" />
+      <Image src="/logo.jpg" alt="Nano Computing ICT Solutions" width={60} height={60} className="rounded-md" />
       <span className={cn(
-        "text-lg font-bold font-headline leading-tight transition-colors text-white"
+        "font-bold leading-tight transition-colors text-primary"
         )}>Nano Computing<br/>ICT Solutions</span>
     </Link>
   );
@@ -30,7 +30,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 w-full transition-all duration-300 bg-secondary'
+        'sticky top-0 z-50 w-full transition-all duration-300 bg-card'
       )}
     >
       <div className="container mx-auto flex h-24 items-center justify-between px-4 md:px-6">
@@ -42,7 +42,7 @@ export function Header() {
               href={link.href}
               className={cn(
                 'text-sm font-medium transition-colors hover:text-primary',
-                pathname === link.href ? 'text-primary' : 'text-gray-300 hover:text-white'
+                pathname === link.href ? 'text-primary' : 'text-muted-foreground hover:text-primary'
               )}
               prefetch={false}
             >
@@ -54,7 +54,7 @@ export function Header() {
         <div className="md:hidden">
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="outline" size="icon" className={cn('bg-transparent text-white hover:bg-white/10 hover:text-white border-gray-400')}>
+              <Button variant="outline" size="icon" className={cn('bg-transparent text-primary hover:bg-primary/10 hover:text-primary border-primary/50')}>
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
