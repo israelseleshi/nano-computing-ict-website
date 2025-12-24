@@ -14,10 +14,11 @@ import Image from 'next/image';
 
 function Logo() {
   return (
-    <Link href="/" className="flex items-center gap-4" prefetch={false}>
+    <Link href="/" className="flex items-center gap-2" prefetch={false}>
       <Image src="/logo.jpg" alt="Nano Computing ICT Solutions" width={60} height={60} className="rounded-md" />
       <span className={cn(
-        "font-bold leading-tight transition-colors text-primary"
+        "font-medium leading-tight transition-colors text-primary",
+        "text-sm"
         )}>Nano Computing<br/>ICT Solutions</span>
     </Link>
   );
