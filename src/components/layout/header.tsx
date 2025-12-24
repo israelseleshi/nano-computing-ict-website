@@ -31,12 +31,15 @@ export function Header() {
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 w-full transition-all duration-300 bg-background'
+        'sticky top-0 z-50 w-full transition-all duration-300'
       )}
+      style={{ backgroundColor: '#F8FAFC' }}
     >
-      <div className="flex h-16 items-center justify-between px-4 md:px-6">
-        <Logo />
-        <nav className="hidden md:flex items-center gap-6">
+      <div className="flex h-16 items-center justify-between">
+        <div className="pl-4 md:pl-6">
+          <Logo />
+        </div>
+        <nav className="hidden md:flex items-center gap-6 pr-4 md:pr-6">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
@@ -52,7 +55,7 @@ export function Header() {
           ))}
         </nav>
         
-        <div className="md:hidden">
+        <div className="md:hidden pr-4 md:pr-6">
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon" className={cn('bg-transparent text-primary hover:bg-primary/10 hover:text-primary border-primary/50')}>
