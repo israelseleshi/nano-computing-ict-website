@@ -24,6 +24,8 @@ const services = [
       'Complete facility security coverage',
       'Protection from burglary and damages',
       'Professional installation and setup',
+      'Residential and commercial solutions',
+      '24/7 monitoring and surveillance',
     ],
   },
   {
@@ -35,6 +37,8 @@ const services = [
       'Comprehensive setup and troubleshooting support',
       'Maintenance and training across all systems',
       'Onsite repair services at your location',
+      'Expert technicians with industry experience',
+      'Support for wide variety of computer systems',
     ],
   },
   {
@@ -46,6 +50,8 @@ const services = [
       'Business-critical application optimization',
       'Secure internet access solutions',
       'Mobile workforce connectivity',
+      'Guest Wi-Fi network setup',
+      'Secure and accessible network design',
     ],
   },
   {
@@ -57,6 +63,21 @@ const services = [
       'Accurate employee work hour tracking',
       'Sick leave and time-off monitoring',
       'Employee performance analytics',
+      'Modern digital attendance solutions',
+      'Comprehensive reporting systems',
+    ],
+  },
+  {
+    image: '/door-access-control-systems.png',
+    title: 'Door Access Control',
+    description:
+      'Advanced access control systems for secure entry management and monitoring.',
+    points: [
+      'Biometric authentication systems',
+      'Remote access management and control',
+      'Real-time monitoring and alerts',
+      'Integration with existing security systems',
+      'Scalable solutions for any facility size',
     ],
   },
 ];
@@ -135,41 +156,48 @@ export default function Home() {
               We provide a wide range of ICT solutions to meet your business needs.
             </p>
           </div>
-          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-2">
-            {services.map((service, index) => (
-              <div
-              key={service.title}
-              className={`grid md:grid-cols-2 gap-8 md:gap-6 items-center`}
-            >
-              <div
-                className={`relative h-60 w-full lg:h-60`}
-              >
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="rounded-lg object-cover"
-                />
-              </div>
-              <div
-                className={`prose max-w-none text-muted-foreground`}
-              >
-                <h3 className="text-xl font-bold text-primary font-headline">
-                  {service.title}
-                </h3>
-                <p className='text-sm'>{service.description}</p>
-                <ul className="space-y-1 mt-4 pl-0 text-sm">
-                  {service.points.map((point) => (
-                    <li key={point} className="flex items-start !pl-0">
-                      <CheckCircle2 className="w-4 h-4 text-primary mr-2 mt-1 flex-shrink-0" />
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            ))}
-          </div>
+          <Carousel
+            opts={{
+              align: 'start',
+              loop: true,
+            }}
+            className="w-full mt-12"
+          >
+            <CarouselContent>
+              {services.map((service, index) => (
+                <CarouselItem key={index} className="md:basis-1/2">
+                   <div className="p-1 h-full">
+                    <Card className="h-full">
+                        <CardHeader className="p-0">
+                            <div className="relative h-56 w-full">
+                            <Image
+                                src={service.image}
+                                alt={service.title}
+                                fill
+                                className="rounded-t-lg object-cover"
+                            />
+                            </div>
+                        </CardHeader>
+                        <CardContent className="p-6">
+                            <h3 className="text-xl font-bold text-primary font-headline">
+                            {service.title}
+                            </h3>
+                            <p className="text-sm text-muted-foreground mt-2">{service.description}</p>
+                            <ul className="space-y-1 mt-4 pl-0 text-sm">
+                            {service.points.slice(0,3).map((point) => (
+                                <li key={point} className="flex items-start !pl-0">
+                                <CheckCircle2 className="w-4 h-4 text-primary mr-2 mt-1 flex-shrink-0" />
+                                <span>{point}</span>
+                                </li>
+                            ))}
+                            </ul>
+                        </CardContent>
+                    </Card>
+                   </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
           <div className="text-center mt-12">
             <Button asChild variant="link" className="text-lg">
               <Link href="/services">
