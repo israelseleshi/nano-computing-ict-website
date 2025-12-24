@@ -9,39 +9,38 @@ export default function ContactPage() {
     <div className="bg-background">
       <div className="container mx-auto px-4 py-8 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
-          
           <div className="space-y-8">
             <div className="p-8 bg-secondary rounded-lg">
-                <h1 className="text-3xl font-extrabold tracking-tight text-primary sm:text-4xl lg:text-5xl font-headline">
-                  Connect With Us
-                </h1>
-                <p className="mt-4 text-lg text-muted-foreground">
-                  Ready to transform your business? Let&apos;s discuss your project.
-                </p>
-                <div className="mt-8 space-y-6 text-lg">
-                  <a
-                    href="tel:+251923787878"
-                    className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <Phone className="w-6 h-6 text-primary flex-shrink-0" />
-                    <span>+251 923 78 78 78</span>
-                  </a>
-                  <a
-                    href="mailto:info@nanocomputingict.com"
-                    className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <Mail className="w-6 h-6 text-primary flex-shrink-0" />
-                    <span>info@nanocomputingict.com</span>
-                  </a>
-                  <div className="flex items-start gap-4 text-muted-foreground">
-                    <MapPin className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
-                    <span>
-                      Rayuma Building 2nd Floor (214)
-                      <br />
-                      Beside Getu Commercial, Addis Ababa
-                    </span>
-                  </div>
+              <h1 className="text-3xl font-extrabold tracking-tight text-primary sm:text-4xl lg:text-5xl font-headline">
+                Connect With Us
+              </h1>
+              <p className="mt-4 text-lg text-muted-foreground">
+                Ready to transform your business? Let&apos;s discuss your project.
+              </p>
+              <div className="mt-8 space-y-6 text-lg">
+                <a
+                  href="tel:+251923787878"
+                  className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Phone className="w-6 h-6 text-primary flex-shrink-0" />
+                  <span>+251 923 78 78 78</span>
+                </a>
+                <a
+                  href="mailto:info@nanocomputingict.com"
+                  className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Mail className="w-6 h-6 text-primary flex-shrink-0" />
+                  <span>info@nanocomputingict.com</span>
+                </a>
+                <div className="flex items-start gap-4 text-muted-foreground">
+                  <MapPin className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+                  <span>
+                    Rayuma Building 2nd Floor (214)
+                    <br />
+                    Beside Getu Commercial, Addis Ababa
+                  </span>
                 </div>
+              </div>
             </div>
 
             <Card className="overflow-hidden">
@@ -65,4 +64,13 @@ export default function ContactPage() {
           <div className="flex items-center">
             <div className="w-full max-w-md mx-auto md:mx-0">
               <h2 className="text-2xl font-bold text-primary font-headline">
-                
+                Send us a Message
+              </h2>
+              <ContactForm />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
