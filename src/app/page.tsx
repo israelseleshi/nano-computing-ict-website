@@ -38,34 +38,34 @@ const services = [
 
 const testimonials = [
   {
-    name: 'John Doe',
-    title: 'CEO of Robi',
+    name: 'Abebe Bikila',
+    title: 'CEO of Ethio Telecom',
     quote: 'Nano Computing ICT Solutions transformed our IT infrastructure. Their expertise and dedication are unparalleled. We\'ve seen a significant improvement in our network performance and security.',
-    avatar: 'JD',
+    avatar: 'AB',
   },
   {
-    name: 'Jane Smith',
-    title: 'Project Manager at a2i',
+    name: 'Liya Kebede',
+    title: 'Project Manager at Ministry of Innovation',
     quote: 'The team at Nano Computing ICT Solutions is professional, responsive, and highly skilled. They delivered our project on time and within budget, exceeding all our expectations.',
-    avatar: 'JS',
+    avatar: 'LK',
   },
   {
-    name: 'Samuel Green',
-    title: 'IT Director at Bangladesh Army',
+    name: 'Samuel Tsegaye',
+    title: 'IT Director at Ethiopian Airlines',
     quote: 'Working with Nano Computing ICT Solutions has been a game-changer. Their innovative solutions have streamlined our operations and provided us with a competitive edge.',
-    avatar: 'SG',
+    avatar: 'ST',
   },
   {
-    name: 'Michael Chen',
-    title: 'CTO, Tech Innovators',
+    name: 'Hana Girma',
+    title: 'CTO, Zemen Bank',
     quote: 'The seamless integration of their cloud solutions was impressive. Downtime was minimal, and the performance boost was immediate. A truly professional team.',
-    avatar: 'MC',
+    avatar: 'HG',
     },
   {
-    name: 'Emily Rodriguez',
-    title: 'Head of Security, FinCorp',
+    name: 'Daniel Bekele',
+    title: 'Head of Security, Awash Bank',
     quote: 'Their network security audit was incredibly thorough. They identified vulnerabilities we were completely unaware of and helped us fortify our defenses. I can sleep better at night.',
-    avatar: 'ER',
+    avatar: 'DB',
     },
 ];
 
