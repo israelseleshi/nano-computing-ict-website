@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    image: '/cctv.jpg',
+    image: '/cctv-camera.png',
     title: 'CCTV Security System',
     description:
       'Comprehensive security camera systems to protect your business and residential properties.',
@@ -25,7 +25,7 @@ const services = [
     ],
   },
   {
-    image: '/computer-repair.jpg',
+    image: '/computer-repair.png',
     title: 'Computer Repair Service',
     description:
       'Professional computer and networking services for residential and business customers with expert technicians.',
@@ -38,7 +38,7 @@ const services = [
     ],
   },
   {
-    image: '/network-design.jpg',
+    image: '/computer-network.png',
     title: 'Computer Network Design and Installation',
     description:
       'Professional network infrastructure design and installation to enhance your workforce productivity.',
@@ -51,7 +51,7 @@ const services = [
     ],
   },
   {
-    image: '/time-attendance.jpg',
+    image: '/time-attendance.png',
     title: 'Time & Attendance System',
     description:
       'Modern time tracking and attendance management systems for accurate workforce monitoring.',
@@ -64,7 +64,7 @@ const services = [
     ],
   },
   {
-    image: '/access-control.jpg',
+    image: '/door-access-control-systems.png',
     title: 'Door Access Control',
     description:
       'Advanced access control systems for secure entry management and monitoring.',
