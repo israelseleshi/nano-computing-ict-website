@@ -18,15 +18,15 @@ export default function ContactPage() {
       <div className="bg-secondary p-8 md:p-12 lg:p-16 flex flex-col justify-center">
         <div className="max-w-md mx-auto">
           <h1 className="text-3xl font-extrabold tracking-tight text-primary md:text-4xl lg:text-5xl font-headline">
-            Get in Touch
+            Connect With Us
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            Have a project in mind or just want to say hello? We&apos;d love to hear from you.
+            Ready to transform your business? Let&apos;s discuss your project.
           </p>
           <div className="mt-8 space-y-4 text-lg">
-            <a href="tel:+8801234567890" className="flex items-center gap-4 text-muted-foreground hover:text-primary">
+            <a href="tel:+251923787878" className="flex items-center gap-4 text-muted-foreground hover:text-primary">
               <Phone className="w-6 h-6 text-primary" />
-              <span>+880 123 456 7890</span>
+              <span>+251 923 78 78 78</span>
             </a>
             <a href="mailto:info@nanocomputingict.com" className="flex items-center gap-4 text-muted-foreground hover:text-primary">
               <Mail className="w-6 h-6 text-primary" />
@@ -35,9 +35,9 @@ export default function ContactPage() {
             <div className="flex items-start gap-4 text-muted-foreground">
               <MapPin className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
               <span>
-                123 Tech Avenue, Gulshan,
+                Rayuma Building 2nd Floor (214)
                 <br />
-                Dhaka 1212, Bangladesh
+                Beside Getu Commercial, Addis Ababa
               </span>
             </div>
           </div>

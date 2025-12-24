@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import { Facebook, Twitter, Linkedin } from 'lucide-react';
 import { NAV_LINKS } from '@/lib/constants';
@@ -10,7 +9,7 @@ export function Footer() {
       <div className="container mx-auto px-4 md:px-6 py-12 grid gap-8 md:grid-cols-4">
         <div className="md:col-span-1">
           <Link href="/" className="flex items-center gap-2" prefetch={false}>
-            <Image src="/logo.jpg" alt="Nano Computing ICT Solutions" width={50} height={50} className="rounded-md" />
+            <Image src="/logo.jpg" alt="Nano Computing ICT Solutions" width={60} height={60} className="rounded-md" />
             <span className="text-xl font-bold font-headline">Nano Computing ICT Solutions</span>
           </Link>
           <p className="mt-2 text-sm text-muted-foreground">
@@ -36,9 +35,9 @@ export function Footer() {
             <div>
               <h3 className="font-semibold">Contact Us</h3>
               <div className="mt-4 space-y-2 text-sm text-muted-foreground">
-                <p>Dhaka, Bangladesh</p>
+                <p>Addis Ababa, Ethiopia</p>
                 <p>Email: info@nanocomputingict.com</p>
-                <p>Phone: +880 123 456 7890</p>
+                <p>Phone: +251 923 78 78 78</p>
               </div>
             </div>
         </div>
