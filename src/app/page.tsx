@@ -12,6 +12,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import { Spotlight } from '@/components/ui/spotlight';
 
 const services = [
   {
@@ -77,39 +78,27 @@ export default function Home() {
 
   return (
     <div className="flex flex-col">
-      <section className="relative overflow-hidden py-20 lg:py-40">
-        <div className="container">
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-            <div className="max-w-xl text-center lg:text-left">
-              <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm">Innovating The Future</div>
-              <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-primary-foreground sm:text-5xl md:text-6xl lg:text-7xl font-headline">
-                Powering Your Digital Transformation
-              </h1>
-              <p className="mt-6 text-lg leading-8 text-muted-foreground sm:text-xl">
-                Nano Computing ICT Solutions delivers cutting-edge technology and expert guidance to propel your business forward.
-              </p>
-              <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
-                <Button asChild size="lg">
-                  <Link href="/services">
-                    Explore Services <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button asChild size="lg" variant="outline">
-                  <Link href="/contact">Contact Us</Link>
-                </Button>
-              </div>
-            </div>
-            {heroImage && (
-              <div className="relative mx-auto aspect-video w-full max-w-2xl overflow-hidden rounded-2xl lg:max-w-none">
-                <Image
-                  src={heroImage.imageUrl}
-                  alt={heroImage.description}
-                  data-ai-hint={heroImage.imageHint}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            )}
+      <section className="h-[40rem] w-full rounded-md flex md:items-center md:justify-center bg-secondary relative overflow-hidden">
+        <Spotlight
+          className="-top-40 left-0 md:left-60 md:-top-20"
+          fill="white"
+        />
+        <div className="p-4 max-w-7xl mx-auto relative z-10 w-full text-center">
+          <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 font-headline">
+            Powering Your <br /> Digital Transformation
+          </h1>
+          <p className="mt-4 font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">
+            Nano Computing ICT Solutions delivers cutting-edge technology and expert guidance to propel your business forward.
+          </p>
+          <div className="mt-10 flex items-center justify-center gap-x-6">
+            <Button asChild size="lg">
+              <Link href="/services">
+                Explore Services <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <Link href="/contact">Contact Us</Link>
+            </Button>
           </div>
         </div>
       </section>
