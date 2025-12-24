@@ -1,12 +1,17 @@
+
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Cloud, Lock, Server, Users, Wifi, Star } from 'lucide-react';
+import { ArrowRight, Cloud, Lock, Server, Users, Wifi } from 'lucide-react';
+import React from 'react';
+import Autoplay from 'embla-carousel-autoplay';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 
 const services = [
   {
@@ -50,10 +55,25 @@ const testimonials = [
     quote: 'Working with Nano Computing ICT Solutions has been a game-changer. Their innovative solutions have streamlined our operations and provided us with a competitive edge.',
     avatar: 'SG',
   },
+  {
+    name: 'Michael Chen',
+    title: 'CTO, Tech Innovators',
+    quote: 'The seamless integration of their cloud solutions was impressive. Downtime was minimal, and the performance boost was immediate. A truly professional team.',
+    avatar: 'MC',
+    },
+  {
+    name: 'Emily Rodriguez',
+    title: 'Head of Security, FinCorp',
+    quote: 'Their network security audit was incredibly thorough. They identified vulnerabilities we were completely unaware of and helped us fortify our defenses. I can sleep better at night.',
+    avatar: 'ER',
+    },
 ];
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'hero');
+  const plugin = React.useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: true })
+  )
 
   return (
     <div className="flex flex-col">
@@ -173,30 +193,46 @@ export default function Home() {
               Real stories from businesses we&apos;ve helped to empower.
             </p>
           </div>
-          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {testimonials.map((testimonial) => (
-                <Card key={testimonial.name} className="flex flex-col justify-between bg-card">
-                  <CardContent className="p-6">
-                    <div className="flex text-yellow-400 gap-1 mb-4">
-                      {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" />)}
-                    </div>
-                    <p className="text-muted-foreground italic">&quot;{testimonial.quote}&quot;</p>
-                  </CardContent>
-                  <CardHeader className="flex flex-row items-center gap-4 p-6 bg-secondary/30">
-                    <Avatar className="w-12 h-12">
-                      <AvatarImage src={`https://i.pravatar.cc/150?u=${testimonial.name}`} />
-                      <AvatarFallback>{testimonial.avatar}</AvatarFallback>
-                    </Avatar>
-                    <div>
-                      <CardTitle className="text-base">{testimonial.name}</CardTitle>
-                      <CardDescription>{testimonial.title}</CardDescription>
-                    </div>
-                  </CardHeader>
-                </Card>
+          <Carousel
+            plugins={[plugin.current]}
+            className="w-full mt-12"
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+          >
+            <CarouselContent>
+              {testimonials.map((testimonial, index) => (
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <div className="p-1 h-full">
+                    <Card className="flex flex-col h-full bg-secondary/30">
+                        <CardContent className="p-6 flex-grow">
+                          <blockquote className="text-lg text-muted-foreground border-l-4 border-primary pl-4 italic">
+                            &quot;{testimonial.quote}&quot;
+                          </blockquote>
+                        </CardContent>
+                        <CardHeader className="flex flex-row items-center gap-4 p-6 pt-0 mt-auto">
+                          <Avatar className="w-14 h-14 border-2 border-primary">
+                            <AvatarImage src={`https://i.pravatar.cc/150?u=${testimonial.name}`} />
+                            <AvatarFallback>{testimonial.avatar}</AvatarFallback>
+                          </Avatar>
+                          <div>
+                            <CardTitle className="text-base font-bold">{testimonial.name}</CardTitle>
+                            <CardDescription>{testimonial.title}</CardDescription>
+                          </div>
+                        </CardHeader>
+                    </Card>
+                  </div>
+                </CarouselItem>
               ))}
-            </div>
+            </CarouselContent>
+          </Carousel>
         </div>
       </section>
     </div>
   );
 }
+
+    
