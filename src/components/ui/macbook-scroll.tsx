@@ -69,7 +69,7 @@ export const MacbookScroll = ({
   return (
     <div
       ref={ref}
-      className="flex min-h-[200vh] shrink-0 scale-[0.35] transform flex-col items-center justify-start py-0 [perspective:800px] sm:scale-50 md:scale-100"
+      className="flex min-h-[200vh] shrink-0 scale-[0.35] transform flex-col items-center justify-start py-0 [perspective:800px] sm:scale-50 md:mt-24 md:scale-100"
     >
       {title && <motion.div
         style={{
@@ -171,14 +171,14 @@ export const Lid = ({
               autoPlay
               muted
               loop
-              className="absolute inset-0 h-full w-full rounded-lg object-cover object-left-top"
+              className="absolute inset-0 h-full w-full rounded-lg object-contain"
             />
           ) : (
             <Image
               src={src}
               alt="hero image"
               fill
-              className="absolute inset-0 h-full w-full rounded-lg object-cover object-left-top"
+              className="absolute inset-0 h-full w-full rounded-lg object-contain"
             />
           )
         )}
