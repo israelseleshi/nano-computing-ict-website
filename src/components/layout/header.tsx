@@ -31,7 +31,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 w-full transition-all duration-300 bg-card'
+        'sticky top-0 z-50 w-full transition-all duration-300 bg-background'
       )}
     >
       <div className="container mx-auto flex h-24 items-center justify-between px-4 md:px-6">
