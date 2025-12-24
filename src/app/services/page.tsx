@@ -3,13 +3,6 @@ import type { Metadata } from 'next';
 import { PageHeader } from '@/components/page-header';
 import Image from 'next/image';
 import { CheckCircle2 } from 'lucide-react';
-import {
-  ShieldCheck,
-  Wrench,
-  Network,
-  Clock,
-  Fingerprint,
-} from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Our Services',
@@ -19,7 +12,7 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    icon: <ShieldCheck className="w-8 h-8 text-primary" />,
+    image: '/cctv.jpg',
     title: 'CCTV Security System',
     description:
       'Comprehensive security camera systems to protect your business and residential properties.',
@@ -32,7 +25,7 @@ const services = [
     ],
   },
   {
-    icon: <Wrench className="w-8 h-8 text-primary" />,
+    image: '/computer-repair.jpg',
     title: 'Computer Repair Service',
     description:
       'Professional computer and networking services for residential and business customers with expert technicians.',
@@ -45,7 +38,7 @@ const services = [
     ],
   },
   {
-    icon: <Network className="w-8 h-8 text-primary" />,
+    image: '/network-design.jpg',
     title: 'Computer Network Design and Installation',
     description:
       'Professional network infrastructure design and installation to enhance your workforce productivity.',
@@ -58,7 +51,7 @@ const services = [
     ],
   },
   {
-    icon: <Clock className="w-8 h-8 text-primary" />,
+    image: '/time-attendance.jpg',
     title: 'Time & Attendance System',
     description:
       'Modern time tracking and attendance management systems for accurate workforce monitoring.',
@@ -71,7 +64,7 @@ const services = [
     ],
   },
   {
-    icon: <Fingerprint className="w-8 h-8 text-primary" />,
+    image: '/access-control.jpg',
     title: 'Door Access Control',
     description:
       'Advanced access control systems for secure entry management and monitoring.',
@@ -93,18 +86,23 @@ export default function ServicesPage() {
         description="We offer a comprehensive suite of ICT solutions designed to secure and streamline your operations. Explore our professional services below."
       />
       <section className="py-16 md:py-24 bg-background">
-        <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {services.map((service) => (
-              <div key={service.title} className="prose lg:prose-lg max-w-none text-muted-foreground">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="bg-primary/10 p-3 rounded-full h-fit">
-                    {service.icon}
-                  </div>
-                  <h2 className="text-2xl font-bold text-primary font-headline m-0">
-                    {service.title}
-                  </h2>
-                </div>
-                <p className="lead !text-base">{service.description}</p>
+        <div className="container space-y-16">
+          {services.map((service, index) => (
+            <div
+              key={service.title}
+              className={`grid md:grid-cols-2 gap-8 md:gap-12 items-center ${
+                index % 2 !== 0 ? 'md:grid-flow-col-dense' : ''
+              }`}
+            >
+              <div
+                className={`prose lg:prose-lg max-w-none text-muted-foreground ${
+                  index % 2 !== 0 ? 'md:col-start-2' : ''
+                }`}
+              >
+                <h2 className="text-3xl font-bold text-primary font-headline">
+                  {service.title}
+                </h2>
+                <p>{service.description}</p>
                 <ul className="space-y-2 mt-6 pl-0">
                   {service.points.map((point) => (
                     <li key={point} className="flex items-start !pl-0">
@@ -114,7 +112,20 @@ export default function ServicesPage() {
                   ))}
                 </ul>
               </div>
-            ))}
+              <div
+                className={`relative h-80 w-full lg:h-96 ${
+                  index % 2 !== 0 ? 'md:col-start-1' : ''
+                }`}
+              >
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="rounded-lg object-cover shadow-xl"
+                />
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </>

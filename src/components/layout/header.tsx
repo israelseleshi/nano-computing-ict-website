@@ -18,7 +18,7 @@ function Logo({ isScrolled }: { isScrolled: boolean }) {
       <Image src="/logo.jpg" alt="Nano Computing ICT Solutions" width={40} height={40} className="rounded-md" />
       <span className={cn(
         "text-xl font-bold font-headline transition-colors",
-        isScrolled ? 'text-primary-foreground' : 'text-white'
+        isScrolled ? 'text-primary' : 'text-white'
         )}>Nano Computing ICT Solutions</span>
     </Link>
   );
@@ -31,12 +31,15 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      const homePage = window.location.pathname === '/';
+      const scrolled = window.scrollY > 10;
+      setIsScrolled(!homePage || scrolled);
     };
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check scroll position on initial render
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [pathname]);
+
 
   return (
     <header
