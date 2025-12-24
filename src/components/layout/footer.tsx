@@ -9,7 +9,7 @@ export function Footer() {
       <div className="container mx-auto px-4 md:px-6 py-12 grid gap-8 md:grid-cols-4">
         <div className="md:col-span-1">
           <Link href="/" className="flex items-center gap-2" prefetch={false}>
-            <Image src="/logo.jpg" alt="Nano Computing ICT Solutions" width={60} height={60} className="rounded-md" />
+            <Image src="/logo.jpg" alt="Nano Computing ICT Solutions" width={80} height={80} className="rounded-md" />
             <span className="text-xl font-bold font-headline">Nano Computing ICT Solutions</span>
           </Link>
           <p className="mt-2 text-sm text-muted-foreground">
@@ -35,7 +35,8 @@ export function Footer() {
             <div>
               <h3 className="font-semibold">Contact Us</h3>
               <div className="mt-4 space-y-2 text-sm text-muted-foreground">
-                <p>Addis Ababa, Ethiopia</p>
+                <p>Rayuma Building 2nd Floor (214)</p>
+                <p>Beside Getu Commercial, Addis Ababa</p>
                 <p>Email: info@nanocomputingict.com</p>
                 <p>Phone: +251 923 78 78 78</p>
               </div>

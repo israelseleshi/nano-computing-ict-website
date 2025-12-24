@@ -14,11 +14,11 @@ import Image from 'next/image';
 
 function Logo() {
   return (
-    <Link href="/" className="flex items-center gap-2" prefetch={false}>
-      <Image src="/logo.jpg" alt="Nano Computing ICT Solutions" width={60} height={60} className="rounded-md" />
+    <Link href="/" className="flex items-center gap-4" prefetch={false}>
+      <Image src="/logo.jpg" alt="Nano Computing ICT Solutions" width={80} height={80} className="rounded-md" />
       <span className={cn(
-        "text-xl font-bold font-headline transition-colors text-white"
-        )}>Nano Computing ICT Solutions</span>
+        "text-lg font-bold font-headline leading-tight transition-colors text-white"
+        )}>Nano Computing<br/>ICT Solutions</span>
     </Link>
   );
 }
@@ -33,7 +33,7 @@ export function Header() {
         'sticky top-0 z-50 w-full transition-all duration-300 bg-secondary'
       )}
     >
-      <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
+      <div className="container mx-auto flex h-24 items-center justify-between px-4 md:px-6">
         <Logo />
         <nav className="hidden md:flex items-center gap-6">
           {NAV_LINKS.map((link) => (
