@@ -9,3 +9,5 @@ deployment:
     - npm install
     - npm run build
     - /usr/bin/touch tmp/restart.txt
+
+    
