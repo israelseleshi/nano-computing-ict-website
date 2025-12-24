@@ -122,7 +122,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col">
-       <section className="bg-background overflow-hidden">
+      <section className="w-full bg-background overflow-hidden md:mt-12">
         <MacbookScroll 
           src="/nano-tech-office-display.mp4" 
           showGradient={false}
@@ -254,24 +254,22 @@ export default function Home() {
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <div className="p-1 h-full">
-                    <Card className="flex flex-col bg-secondary/30 h-full">
-                      <CardContent className="p-6 flex-grow">
-                        <blockquote className="text-lg text-muted-foreground border-l-4 border-primary pl-4 italic">
-                          &quot;{testimonial.quote}&quot;
+                   <div className="p-4 h-full">
+                    <div className="p-6 rounded-lg border bg-secondary/50 h-full flex flex-col">
+                        <blockquote className="text-muted-foreground flex-grow">
+                        &quot;{testimonial.quote}&quot;
                         </blockquote>
-                      </CardContent>
-                      <CardHeader className="flex flex-row items-center gap-4 p-6 pt-0 mt-auto">
-                        <Avatar className="w-14 h-14 border-2 border-primary">
+                        <div className="flex items-center gap-4 mt-6">
+                        <Avatar className="w-12 h-12 border-2 border-primary">
                           <AvatarImage src={`https://i.pravatar.cc/150?u=${testimonial.name}`} />
                           <AvatarFallback>{testimonial.avatar}</AvatarFallback>
                         </Avatar>
                         <div>
-                          <CardTitle className="text-base font-bold">{testimonial.name}</CardTitle>
-                          <CardDescription>{testimonial.title}</CardDescription>
+                          <p className="font-semibold text-primary-foreground">{testimonial.name}</p>
+                          <p className="text-sm text-muted-foreground">{testimonial.title}</p>
                         </div>
-                      </CardHeader>
-                    </Card>
+                      </div>
+                    </div>
                   </div>
                 </CarouselItem>
               ))}
