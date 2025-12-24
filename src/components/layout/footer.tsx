@@ -6,8 +6,8 @@ import Image from 'next/image';
 export function Footer() {
   return (
     <footer className="bg-secondary text-secondary-foreground mt-auto">
-      <div className="container mx-auto px-4 md:px-6 py-12 grid gap-8 md:grid-cols-4">
-        <div className="md:col-span-1">
+      <div className="container mx-auto px-4 md:px-6 py-12 grid gap-12 md:grid-cols-12">
+        <div className="md:col-span-5 lg:col-span-4">
           <Link href="/" className="flex items-center gap-2" prefetch={false}>
             <Image src="/logo.jpg" alt="Nano Computing ICT Solutions" width={80} height={80} className="rounded-md" />
             <span className="text-xl font-bold font-headline">Nano Computing ICT Solutions</span>
@@ -21,7 +21,7 @@ export function Footer() {
             <Link href="#" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary"><Linkedin size={20} /></Link>
           </div>
         </div>
-        <div className="grid grid-cols-2 md:col-span-3 gap-8">
+        <div className="md:col-span-7 lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-8">
             <div>
               <h3 className="font-semibold">Quick Links</h3>
               <ul className="mt-4 space-y-2">
