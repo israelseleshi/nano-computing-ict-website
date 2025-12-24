@@ -54,12 +54,12 @@ export const MacbookScroll = ({
   const scaleX = useTransform(
     scrollYProgress,
     [0, 0.3],
-    [1.2, isMobile ? 1 : 1.5],
+    [1.2, isMobile ? 1 : 1.5]
   );
   const scaleY = useTransform(
     scrollYProgress,
     [0, 0.3],
-    [0.6, isMobile ? 1 : 1.5],
+    [0.6, isMobile ? 1 : 1.5]
   );
   const translate = useTransform(scrollYProgress, [0, 1], [0, 1500]);
   const rotate = useTransform(scrollYProgress, [0.1, 0.12, 0.3], [-28, -28, 0]);
@@ -69,7 +69,7 @@ export const MacbookScroll = ({
   return (
     <div
       ref={ref}
-      className="flex min-h-[200vh] shrink-0 scale-[0.35] transform flex-col items-center justify-start py-0 [perspective:800px] sm:scale-50 md:py-80 md:scale-100"
+      className="flex min-h-[200vh] shrink-0 scale-[0.35] transform flex-col items-center justify-start py-0 [perspective:800px] sm:scale-50 md:scale-100 md:py-24"
     >
       <motion.div
         style={{
@@ -129,6 +129,8 @@ export const Lid = ({
   translate: MotionValue<number>;
   src?: string;
 }) => {
+  const isVideo = src?.endsWith('.mp4');
+
   return (
     <div className="relative [perspective:800px]">
       <div
@@ -162,12 +164,24 @@ export const Lid = ({
         className="absolute inset-0 h-96 w-[32rem] rounded-2xl bg-[#010101] p-2"
       >
         <div className="absolute inset-0 rounded-lg bg-[#272729]" />
-        {src && <Image
-          src={src as string}
-          alt="hero image"
-          fill
-          className="absolute inset-0 h-full w-full rounded-lg object-cover object-left-top"
-        />}
+        {src && (
+          isVideo ? (
+            <video
+              src={src}
+              autoPlay
+              muted
+              loop
+              className="absolute inset-0 h-full w-full rounded-lg object-cover object-left-top"
+            />
+          ) : (
+            <Image
+              src={src}
+              alt="hero image"
+              fill
+              className="absolute inset-0 h-full w-full rounded-lg object-cover object-left-top"
+            />
+          )
+        )}
       </motion.div>
     </div>
   );

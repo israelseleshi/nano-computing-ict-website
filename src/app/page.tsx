@@ -123,8 +123,8 @@ export default function Home() {
   return (
     <div className="flex flex-col">
        <section className="bg-background overflow-hidden">
-        {heroImage && <MacbookScroll 
-          src={heroImage.imageUrl} 
+        <MacbookScroll 
+          src="/hero-video.mp4" 
           showGradient={false}
           title={
             <div className="text-center">
@@ -146,7 +146,7 @@ export default function Home() {
               </div>
             </div>
           }
-        />}
+        />
       </section>
 
       <section id="services" className="py-16 md:py-24 bg-background">
