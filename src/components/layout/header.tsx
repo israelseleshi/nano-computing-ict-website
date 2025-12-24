@@ -14,8 +14,8 @@ import { NAV_LINKS } from '@/lib/constants';
 function Logo() {
   return (
     <Link href="/" className="flex items-center gap-4" prefetch={false}>
-      <Image src="/logo.jpg" alt="Nano Computing ICT Solutions" width={40} height={40} className="rounded-md" />
-      <span className="font-semibold text-primary hidden sm:inline-block">Nano Computing ICT Solutions</span>
+      <Image src="/logo.jpg" alt="Nano Computing ICT Solutions" width={50} height={50} className="rounded-md" />
+      <span className="font-semibold text-primary hidden sm:inline-block text-base">Nano Computing ICT Solutions</span>
     </Link>
   );
 }
