@@ -172,7 +172,7 @@ export default function Home() {
             <CarouselContent>
               {services.map((service, index) => (
                 <CarouselItem key={index}>
-                   <div className="p-1 h-full">
+                   <div className="p-1">
                    <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center p-4">
                         <div className="relative h-80 w-full lg:h-96">
                         <Image
@@ -273,8 +273,8 @@ export default function Home() {
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <div className="p-1 h-full">
-                    <Card className="flex flex-col h-full bg-secondary/30">
+                  <div className="p-1">
+                    <Card className="flex flex-col bg-secondary/30">
                         <CardContent className="p-6 flex-grow">
                           <blockquote className="text-lg text-muted-foreground border-l-4 border-primary pl-4 italic">
                             &quot;{testimonial.quote}&quot;
@@ -300,4 +300,5 @@ export default function Home() {
       </section>
     </div>
   );
-}
+
+    
