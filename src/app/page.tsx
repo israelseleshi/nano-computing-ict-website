@@ -150,19 +150,25 @@ export default function Home() {
 
       <section id="services" className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl font-bold tracking-tight text-primary md:text-4xl font-headline">Our Core Services</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              We provide a wide range of ICT solutions to meet your business needs.
-            </p>
-          </div>
           <Carousel
             opts={{
               align: 'start',
               loop: true,
             }}
-            className="w-full mt-12"
+            className="w-full"
           >
+            <div className="flex justify-between items-center mb-8">
+              <div className="max-w-2xl">
+                <h2 className="text-3xl font-bold tracking-tight text-primary md:text-4xl font-headline">Our Core Services</h2>
+                <p className="mt-4 text-lg text-muted-foreground">
+                  We provide a wide range of ICT solutions to meet your business needs.
+                </p>
+              </div>
+              <div className="flex gap-2">
+                <CarouselPrevious />
+                <CarouselNext />
+              </div>
+            </div>
             <CarouselContent>
               {services.map((service, index) => (
                 <CarouselItem key={index}>
@@ -195,8 +201,6 @@ export default function Home() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2" />
-            <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2" />
           </Carousel>
           <div className="text-center mt-12">
             <Button asChild variant="link" className="text-lg">
