@@ -12,7 +12,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import { MacbookScroll } from '@/components/ui/macbook-scroll';
 
 const services = [
   {
@@ -123,32 +122,39 @@ export default function Home() {
 
   return (
     <div className="flex flex-col">
-      <section className="w-full overflow-hidden bg-background">
-        <MacbookScroll
-            title={
-              <div className='text-center'>
-                <h1 className="text-4xl md:text-6xl font-bold text-primary font-headline leading-tight">
-                  Powering Your Digital Transformation
+       <section className="bg-background py-20 md:py-32">
+        <div className="container grid md:grid-cols-2 gap-12 items-center">
+            <div className="flex flex-col items-start text-left">
+                <h1 className="text-4xl md:text-5xl font-extrabold text-primary font-headline leading-tight">
+                    Powering Your Digital Transformation
                 </h1>
-                <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-                  Nano Computing ICT Solutions delivers cutting-edge technology and expert guidance to propel your business forward.
+                <p className="mt-4 text-lg text-muted-foreground max-w-xl">
+                    Nano Computing ICT Solutions delivers cutting-edge technology and expert guidance to propel your business forward.
                 </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
-                  <Button asChild size="lg">
-                    <Link href="/services">
-                      Explore Services <ArrowRight className="ml-2 h-5 w-5" />
-                    </Link>
-                  </Button>
-                  <Button asChild size="lg" variant="outline" className="bg-background">
-                    <Link href="/contact">Contact Us</Link>
-                  </Button>
+                <div className="mt-8 flex flex-wrap gap-4">
+                    <Button asChild size="lg">
+                        <Link href="/services">
+                            Explore Services <ArrowRight className="ml-2 h-5 w-5" />
+                        </Link>
+                    </Button>
+                    <Button asChild size="lg" variant="outline">
+                        <Link href="/contact">Contact Us</Link>
+                    </Button>
                 </div>
-              </div>
-            }
-            src={heroImage?.imageUrl}
-            showGradient={false}
-          />
-      </section>
+            </div>
+            <div className="relative h-80 w-full lg:h-96">
+                {heroImage && (
+                    <Image
+                        src={heroImage.imageUrl}
+                        alt={heroImage.description}
+                        data-ai-hint={heroImage.imageHint}
+                        fill
+                        className="rounded-lg object-cover shadow-xl"
+                    />
+                )}
+            </div>
+        </div>
+    </section>
 
       <section id="services" className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 md:px-6">
@@ -306,5 +312,4 @@ export default function Home() {
       </section>
     </div>
   );
-
     
