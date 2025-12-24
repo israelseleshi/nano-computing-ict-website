@@ -122,14 +122,14 @@ export default function Home() {
 
   return (
     <div className="flex flex-col">
-      <section className="w-full bg-background overflow-hidden min-h-[60vh] md:min-h-0 md:h-auto">
-        <div className="container grid md:grid-cols-2 items-center gap-8 py-12 md:py-20">
-          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+      <section className="w-full bg-background overflow-hidden">
+        <div className="container grid md:grid-cols-2 items-center gap-8 py-12">
+          <div className="flex flex-col items-center justify-center md:items-start text-center md:text-left h-full">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary font-headline tracking-tight">
               Your Integrated Safety Partner
             </h1>
           </div>
-          <div className="relative h-[30rem] md:h-auto -mt-12 md:mt-0">
+          <div className="relative h-[30rem] md:h-auto -mt-36 md:mt-0">
              <MacbookScroll 
                 src="/nano-tech-office-display.mp4" 
                 showGradient={false}
@@ -264,7 +264,7 @@ export default function Home() {
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                    <div className="p-4 h-full">
-                    <div className="p-6 rounded-lg border bg-secondary/50 h-full flex flex-col">
+                    <Card className="p-6 rounded-lg h-full flex flex-col bg-secondary">
                         <blockquote className="text-muted-foreground flex-grow">
                         &quot;{testimonial.quote}&quot;
                         </blockquote>
@@ -278,7 +278,7 @@ export default function Home() {
                           <p className="text-sm text-muted-foreground">{testimonial.title}</p>
                         </div>
                       </div>
-                    </div>
+                    </Card>
                   </div>
                 </CarouselItem>
               ))}
