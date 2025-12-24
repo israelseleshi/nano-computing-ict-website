@@ -4,7 +4,6 @@ import { Users, Target, Rocket, Lightbulb } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PageHeader } from '@/components/page-header';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import AboutUsSummary from './_components/about-us-summary';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 export const metadata: Metadata = {
@@ -51,12 +50,6 @@ export default function AboutPage() {
                 {teamImage && <Image src={teamImage.imageUrl} alt={teamImage.description} data-ai-hint={teamImage.imageHint} fill className="rounded-lg object-cover shadow-xl" />}
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="py-16 md:py-24 bg-secondary">
-        <div className="container">
-            <AboutUsSummary />
         </div>
       </section>
       
