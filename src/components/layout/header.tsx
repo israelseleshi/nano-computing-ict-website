@@ -36,7 +36,7 @@ export function Header() {
       style={{ backgroundColor: '#F8FAFC' }}
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        <div>
+        <div className="flex items-center">
           <Logo />
         </div>
         <nav className="hidden md:flex items-center gap-6">
@@ -46,7 +46,7 @@ export function Header() {
               href={link.href}
               className={cn(
                 'text-sm font-medium transition-colors hover:text-primary',
-                pathname === link.href ? 'text-primary' : 'text-muted-foreground hover:text-primary'
+                pathname === link.href ? 'text-primary' : 'text-muted-foreground'
               )}
               prefetch={false}
             >
