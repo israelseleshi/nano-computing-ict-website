@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -12,6 +11,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { MacbookScroll } from '@/components/ui/macbook-scroll';
 
 const services = [
   {
@@ -122,39 +122,27 @@ export default function Home() {
 
   return (
     <div className="flex flex-col">
-       <section className="bg-background py-20 md:py-32">
-        <div className="container grid md:grid-cols-2 gap-12 items-center">
-            <div className="flex flex-col items-start text-left">
-                <h1 className="text-4xl md:text-5xl font-extrabold text-primary font-headline leading-tight">
-                    Powering Your Digital Transformation
-                </h1>
-                <p className="mt-4 text-lg text-muted-foreground max-w-xl">
-                    Nano Computing ICT Solutions delivers cutting-edge technology and expert guidance to propel your business forward.
-                </p>
-                <div className="mt-8 flex flex-wrap gap-4">
-                    <Button asChild size="lg">
-                        <Link href="/services">
-                            Explore Services <ArrowRight className="ml-2 h-5 w-5" />
-                        </Link>
-                    </Button>
-                    <Button asChild size="lg" variant="outline">
-                        <Link href="/contact">Contact Us</Link>
-                    </Button>
-                </div>
-            </div>
-            <div className="relative h-80 w-full lg:h-96">
-                {heroImage && (
-                    <Image
-                        src={heroImage.imageUrl}
-                        alt={heroImage.description}
-                        data-ai-hint={heroImage.imageHint}
-                        fill
-                        className="rounded-lg object-cover shadow-xl"
-                    />
-                )}
-            </div>
+       <section className="bg-background overflow-hidden">
+        <div className="container text-center pt-24 md:pt-32">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-primary font-headline leading-tight">
+            Powering Your Digital Transformation
+          </h1>
+          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+            Nano Computing ICT Solutions delivers cutting-edge technology and expert guidance to propel your business forward.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-4 justify-center">
+              <Button asChild size="lg">
+                  <Link href="/services">
+                      Explore Services <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline">
+                  <Link href="/contact">Contact Us</Link>
+              </Button>
+          </div>
         </div>
-    </section>
+        {heroImage && <MacbookScroll src={heroImage.imageUrl} showGradient={false} />}
+      </section>
 
       <section id="services" className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 md:px-6">
@@ -226,7 +214,7 @@ export default function Home() {
             <div>
               <h2 className="text-3xl font-bold tracking-tight text-primary md:text-4xl font-headline">Why Choose Nano Computing ICT Solutions?</h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                We are a team of dedicated ICT professionals with a passion for technology and a commitment to our clients&apos; success.
+                We are a team of dedicated ICT professionals with a passion for technology and a commitment to our clients' success.
               </p>
               <div className="mt-8 space-y-6">
                 <div className="flex gap-4">
@@ -265,7 +253,7 @@ export default function Home() {
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-3xl font-bold tracking-tight text-primary md:text-4xl font-headline">What Our Clients Say</h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Real stories from businesses we&apos;ve helped to empower.
+              Real stories from businesses we've helped to empower.
             </p>
           </div>
           <Carousel
@@ -283,7 +271,7 @@ export default function Home() {
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-1 h-full">
                     <Card className="flex flex-col bg-secondary/30 h-full">
-                      <CardContent className="p-6 flex-grow flex items-center">
+                      <CardContent className="p-6 flex-grow">
                         <blockquote className="text-lg text-muted-foreground border-l-4 border-primary pl-4 italic">
                           &quot;{testimonial.quote}&quot;
                         </blockquote>
@@ -312,4 +300,3 @@ export default function Home() {
       </section>
     </div>
   );
-    
