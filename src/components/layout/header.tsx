@@ -12,11 +12,14 @@ import { cn } from '@/lib/utils';
 import { NAV_LINKS } from '@/lib/constants';
 import Image from 'next/image';
 
-function Logo() {
+function Logo({ isScrolled }: { isScrolled: boolean }) {
   return (
     <Link href="/" className="flex items-center gap-2" prefetch={false}>
       <Image src="/logo.jpg" alt="Nano Computing ICT Solutions" width={40} height={40} className="rounded-md" />
-      <span className="text-xl font-bold text-primary-foreground font-headline">Nano Computing ICT Solutions</span>
+      <span className={cn(
+        "text-xl font-bold font-headline transition-colors",
+        isScrolled ? 'text-primary-foreground' : 'text-white'
+        )}>Nano Computing ICT Solutions</span>
     </Link>
   );
 }
@@ -31,6 +34,7 @@ export function Header() {
       setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check scroll position on initial render
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -42,7 +46,7 @@ export function Header() {
       )}
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        <Logo />
+        <Logo isScrolled={isScrolled} />
         <nav className="hidden md:flex items-center gap-6">
           {NAV_LINKS.map((link) => (
             <Link
@@ -50,7 +54,7 @@ export function Header() {
               href={link.href}
               className={cn(
                 'text-sm font-medium transition-colors hover:text-primary',
-                pathname === link.href ? 'text-primary' : 'text-muted-foreground'
+                pathname === link.href ? 'text-primary' : (isScrolled ? 'text-muted-foreground' : 'text-gray-300 hover:text-white')
               )}
               prefetch={false}
             >
@@ -62,14 +66,14 @@ export function Header() {
         <div className="md:hidden">
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="outline" size="icon">
+              <Button variant="outline" size="icon" className={cn(isScrolled ? '' : 'bg-transparent text-white hover:bg-white/10 hover:text-white border-gray-400')}>
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="left">
               <div className="flex flex-col gap-6 p-6">
-                <Logo />
+                <Logo isScrolled={true} />
                 <nav className="flex flex-col gap-4">
                   {NAV_LINKS.map((link) => (
                     <Link
