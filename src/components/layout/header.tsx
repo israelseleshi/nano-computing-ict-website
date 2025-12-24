@@ -1,21 +1,20 @@
-
 'use client';
 
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import Image from 'next/image';
 
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { NAV_LINKS } from '@/lib/constants';
-import Image from 'next/image';
 
 function Logo() {
   return (
-    <Link href="/" className="flex items-center gap-2" prefetch={false}>
-      <Image src="/logo.jpg" alt="Nano Computing ICT Solutions" width={60} height={60} className="rounded-md" />
+    <Link href="/" className="flex items-center gap-4" prefetch={false}>
+      <Image src="/logo.jpg" alt="Nano Computing ICT Solutions" width={40} height={40} className="rounded-md" />
       <span className="font-semibold text-primary hidden sm:inline-block">Nano Computing ICT Solutions</span>
     </Link>
   );
@@ -26,8 +25,8 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-header">
-      <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
+    <header className="sticky top-0 z-50 w-full border-b bg-secondary">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <div className="flex items-center">
           <Logo />
         </div>
@@ -53,12 +52,12 @@ export function Header() {
         <div className="md:hidden">
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="outline" size="icon" className="bg-transparent text-primary hover:bg-primary/10">
+              <Button variant="ghost" size="icon" className="text-primary hover:bg-primary/10">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left">
+            <SheetContent side="left" className="w-full max-w-sm">
               <div className="flex flex-col gap-6 p-6">
                 <div className="flex items-center justify-between">
                     <Logo />

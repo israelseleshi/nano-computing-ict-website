@@ -72,9 +72,3 @@
     flex-grow: 1;
   }
 }
-
-@layer components {
-  .bg-header {
-    background-color: #F8FAFC;
-  }
-}
