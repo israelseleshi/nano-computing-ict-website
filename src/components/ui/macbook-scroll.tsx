@@ -69,7 +69,7 @@ export const MacbookScroll = ({
   return (
     <div
       ref={ref}
-      className="flex min-h-[150vh] md:min-h-[200vh] shrink-0 transform flex-col items-center justify-start [perspective:800px] sm:scale-50 md:scale-100"
+      className="flex min-h-[60vh] md:min-h-[120vh] -translate-y-20 scale-[0.65] transform flex-col items-center justify-start [perspective:800px] md:scale-100"
     >
       {/* Lid */}
       <Lid

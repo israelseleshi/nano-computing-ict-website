@@ -122,11 +122,20 @@ export default function Home() {
 
   return (
     <div className="flex flex-col">
-      <section className="w-full bg-background overflow-hidden md:mt-12">
-        <MacbookScroll 
-          src="/nano-tech-office-display.mp4" 
-          showGradient={false}
-        />
+      <section className="w-full bg-background overflow-hidden min-h-[60vh] md:min-h-0 md:h-auto">
+        <div className="container grid md:grid-cols-2 items-center gap-8 py-12 md:py-20">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary font-headline tracking-tight">
+              Your Integrated Safety Partner
+            </h1>
+          </div>
+          <div className="relative h-[30rem] md:h-auto -mt-12 md:mt-0">
+             <MacbookScroll 
+                src="/nano-tech-office-display.mp4" 
+                showGradient={false}
+              />
+          </div>
+        </div>
       </section>
 
       <section id="services" className="py-16 md:py-24 bg-background">
