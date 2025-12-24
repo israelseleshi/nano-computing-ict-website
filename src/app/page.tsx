@@ -1,17 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Cloud, Lock, Server, Users, Wifi } from 'lucide-react';
+import { ArrowRight, Cloud, Lock, Server, Users, Wifi, Star } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 
 const services = [
@@ -39,16 +33,22 @@ const services = [
 
 const testimonials = [
   {
-    name: 'John Doe, CEO of Robi',
+    name: 'John Doe',
+    title: 'CEO of Robi',
     quote: 'Nano Computing ICT Solutions transformed our IT infrastructure. Their expertise and dedication are unparalleled. We\'ve seen a significant improvement in our network performance and security.',
+    avatar: 'JD',
   },
   {
-    name: 'Jane Smith, Project Manager at a2i',
+    name: 'Jane Smith',
+    title: 'Project Manager at a2i',
     quote: 'The team at Nano Computing ICT Solutions is professional, responsive, and highly skilled. They delivered our project on time and within budget, exceeding all our expectations.',
+    avatar: 'JS',
   },
   {
-    name: 'Samuel Green, IT Director at Bangladesh Army',
+    name: 'Samuel Green',
+    title: 'IT Director at Bangladesh Army',
     quote: 'Working with Nano Computing ICT Solutions has been a game-changer. Their innovative solutions have streamlined our operations and provided us with a competitive edge.',
+    avatar: 'SG',
   },
 ];
 
@@ -173,24 +173,28 @@ export default function Home() {
               Real stories from businesses we&apos;ve helped to empower.
             </p>
           </div>
-          <Carousel className="mt-12 w-full max-w-4xl mx-auto" opts={{ loop: true }}>
-            <CarouselContent>
+          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {testimonials.map((testimonial) => (
-                <CarouselItem key={testimonial.name}>
-                  <div className="p-2">
-                    <Card className="bg-secondary/50">
-                      <CardContent className="p-8 text-center">
-                        <p className="text-lg italic">&quot;{testimonial.quote}&quot;</p>
-                        <p className="mt-6 font-semibold text-primary">— {testimonial.name}</p>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
+                <Card key={testimonial.name} className="flex flex-col justify-between bg-card">
+                  <CardContent className="p-6">
+                    <div className="flex text-yellow-400 gap-1 mb-4">
+                      {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" />)}
+                    </div>
+                    <p className="text-muted-foreground italic">&quot;{testimonial.quote}&quot;</p>
+                  </CardContent>
+                  <CardHeader className="flex flex-row items-center gap-4 p-6 bg-secondary/30">
+                    <Avatar className="w-12 h-12">
+                      <AvatarImage src={`https://i.pravatar.cc/150?u=${testimonial.name}`} />
+                      <AvatarFallback>{testimonial.avatar}</AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <CardTitle className="text-base">{testimonial.name}</CardTitle>
+                      <CardDescription>{testimonial.title}</CardDescription>
+                    </div>
+                  </CardHeader>
+                </Card>
               ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
-          </Carousel>
+            </div>
         </div>
       </section>
     </div>
