@@ -11,7 +11,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Spotlight } from '@/components/ui/spotlight';
 
 const services = [
@@ -165,38 +165,38 @@ export default function Home() {
           >
             <CarouselContent>
               {services.map((service, index) => (
-                <CarouselItem key={index} className="md:basis-1/2">
+                <CarouselItem key={index}>
                    <div className="p-1 h-full">
-                    <Card className="h-full">
-                        <CardHeader className="p-0">
-                            <div className="relative h-56 w-full">
-                            <Image
-                                src={service.image}
-                                alt={service.title}
-                                fill
-                                className="rounded-t-lg object-cover"
-                            />
-                            </div>
-                        </CardHeader>
-                        <CardContent className="p-6">
-                            <h3 className="text-xl font-bold text-primary font-headline">
+                   <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center p-4">
+                        <div className="relative h-80 w-full lg:h-96">
+                        <Image
+                            src={service.image}
+                            alt={service.title}
+                            fill
+                            className="rounded-lg object-cover"
+                        />
+                        </div>
+                        <div className="prose lg:prose-lg max-w-none text-muted-foreground">
+                        <h3 className="text-2xl font-bold text-primary font-headline">
                             {service.title}
-                            </h3>
-                            <p className="text-sm text-muted-foreground mt-2">{service.description}</p>
-                            <ul className="space-y-1 mt-4 pl-0 text-sm">
-                            {service.points.slice(0,3).map((point) => (
-                                <li key={point} className="flex items-start !pl-0">
-                                <CheckCircle2 className="w-4 h-4 text-primary mr-2 mt-1 flex-shrink-0" />
+                        </h3>
+                        <p>{service.description}</p>
+                        <ul className="space-y-2 mt-6 pl-0 text-sm">
+                            {service.points.map((point) => (
+                            <li key={point} className="flex items-start !pl-0">
+                                <CheckCircle2 className="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" />
                                 <span>{point}</span>
-                                </li>
+                            </li>
                             ))}
-                            </ul>
-                        </CardContent>
-                    </Card>
+                        </ul>
+                        </div>
+                    </div>
                    </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
+            <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2" />
+            <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2" />
           </Carousel>
           <div className="text-center mt-12">
             <Button asChild variant="link" className="text-lg">
