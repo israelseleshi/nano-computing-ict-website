@@ -15,7 +15,7 @@ function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2" prefetch={false}>
       <Mountain className="h-6 w-6 text-primary" />
-      <span className="text-xl font-bold text-primary-foreground font-headline">NanoVision</span>
+      <span className="text-xl font-bold text-primary-foreground font-headline">Nano Computing ICT Solutions</span>
     </Link>
   );
 }
@@ -57,11 +57,7 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="hidden md:block">
-          <Button asChild>
-            <Link href="/contact">Get a Quote</Link>
-          </Button>
-        </div>
+        
         <div className="md:hidden">
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
@@ -89,9 +85,7 @@ export function Header() {
                     </Link>
                   ))}
                 </nav>
-                <Button asChild onClick={() => setMobileMenuOpen(false)}>
-                  <Link href="/contact">Get a Quote</Link>
-                </Button>
+                
               </div>
             </SheetContent>
           </Sheet>

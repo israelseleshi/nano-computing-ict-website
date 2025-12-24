@@ -32,7 +32,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHeader
-        title="About NanoVision"
+        title="About Nano Computing ICT Solutions"
         description="We are a team of passionate ICT professionals dedicated to providing the best possible technology solutions to our clients."
       />
       <section className="py-16 md:py-24 bg-background">

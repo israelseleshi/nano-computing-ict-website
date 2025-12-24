@@ -6,8 +6,8 @@ import { Footer } from '@/components/layout/footer';
 
 export const metadata: Metadata = {
   title: {
-    default: 'NanoVision - Innovative ICT Solutions',
-    template: '%s | NanoVision',
+    default: 'Nano Computing ICT Solutions - Innovative ICT Solutions',
+    template: '%s | Nano Computing ICT Solutions',
   },
   description: 'Nano Computing ICT Solutions: Your partner in digital transformation, offering cutting-edge IT services, network solutions, and software development.',
   keywords: ['ICT Solutions', 'IT Services', 'Nano Computing', 'Software Development', 'Network Security'],

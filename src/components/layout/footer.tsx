@@ -9,7 +9,7 @@ export function Footer() {
         <div className="md:col-span-1">
           <Link href="/" className="flex items-center gap-2" prefetch={false}>
             <Mountain className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold font-headline">NanoVision</span>
+            <span className="text-xl font-bold font-headline">Nano Computing ICT Solutions</span>
           </Link>
           <p className="mt-2 text-sm text-muted-foreground">
             Your partner in digital transformation.
@@ -35,7 +35,7 @@ export function Footer() {
               <h3 className="font-semibold">Contact Us</h3>
               <div className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <p>Dhaka, Bangladesh</p>
-                <p>Email: info@nanovision.com</p>
+                <p>Email: info@nanocomputingict.com</p>
                 <p>Phone: +880 123 456 7890</p>
               </div>
             </div>
@@ -43,7 +43,7 @@ export function Footer() {
       </div>
       <div className="bg-muted text-muted-foreground">
         <div className="container mx-auto px-4 md:px-6 py-4 text-center text-sm">
-          © {new Date().getFullYear()} NanoVision. All rights reserved.
+          © {new Date().getFullYear()} Nano Computing ICT Solutions. All rights reserved.
         </div>
       </div>
     </footer>

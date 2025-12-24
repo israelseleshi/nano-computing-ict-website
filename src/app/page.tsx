@@ -12,7 +12,7 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Spotlight } from '@/components/ui/spotlight';
+
 
 const services = [
   {
@@ -40,15 +40,15 @@ const services = [
 const testimonials = [
   {
     name: 'John Doe, CEO of Robi',
-    quote: 'NanoVision transformed our IT infrastructure. Their expertise and dedication are unparalleled. We\'ve seen a significant improvement in our network performance and security.',
+    quote: 'Nano Computing ICT Solutions transformed our IT infrastructure. Their expertise and dedication are unparalleled. We\'ve seen a significant improvement in our network performance and security.',
   },
   {
     name: 'Jane Smith, Project Manager at a2i',
-    quote: 'The team at NanoVision is professional, responsive, and highly skilled. They delivered our project on time and within budget, exceeding all our expectations.',
+    quote: 'The team at Nano Computing ICT Solutions is professional, responsive, and highly skilled. They delivered our project on time and within budget, exceeding all our expectations.',
   },
   {
     name: 'Samuel Green, IT Director at Bangladesh Army',
-    quote: 'Working with NanoVision has been a game-changer. Their innovative solutions have streamlined our operations and provided us with a competitive edge.',
+    quote: 'Working with Nano Computing ICT Solutions has been a game-changer. Their innovative solutions have streamlined our operations and provided us with a competitive edge.',
   },
 ];
 
@@ -57,27 +57,39 @@ export default function Home() {
 
   return (
     <div className="flex flex-col">
-      <section className="relative w-full py-20 md:py-32 lg:py-40 overflow-hidden">
-        <Spotlight className="absolute -top-40 left-0 md:left-60 md:-top-20" fill="white" />
-        <div className="container mx-auto px-4 md:px-6 text-center">
-          <div className="max-w-3xl mx-auto">
-            <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm">Innovating The Future</div>
-            <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-primary-foreground sm:text-5xl md:text-6xl lg:text-7xl font-headline">
-              Powering Your Digital Transformation
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground sm:text-xl">
-              Nano Computing ICT Solutions delivers cutting-edge technology and expert guidance to propel your business forward.
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Button asChild size="lg">
-                <Link href="/services">
-                  Explore Services <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link href="/contact">Contact Us</Link>
-              </Button>
+      <section className="relative overflow-hidden py-20 lg:py-40">
+        <div className="container">
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+            <div className="max-w-xl text-center lg:text-left">
+              <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm">Innovating The Future</div>
+              <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-primary-foreground sm:text-5xl md:text-6xl lg:text-7xl font-headline">
+                Powering Your Digital Transformation
+              </h1>
+              <p className="mt-6 text-lg leading-8 text-muted-foreground sm:text-xl">
+                Nano Computing ICT Solutions delivers cutting-edge technology and expert guidance to propel your business forward.
+              </p>
+              <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
+                <Button asChild size="lg">
+                  <Link href="/services">
+                    Explore Services <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button asChild size="lg" variant="outline">
+                  <Link href="/contact">Contact Us</Link>
+                </Button>
+              </div>
             </div>
+            {heroImage && (
+              <div className="relative mx-auto aspect-video w-full max-w-2xl overflow-hidden rounded-2xl lg:max-w-none">
+                <Image
+                  src={heroImage.imageUrl}
+                  alt={heroImage.description}
+                  data-ai-hint={heroImage.imageHint}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -117,7 +129,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight text-primary md:text-4xl font-headline">Why Choose NanoVision?</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-primary md:text-4xl font-headline">Why Choose Nano Computing ICT Solutions?</h2>
               <p className="mt-4 text-lg text-muted-foreground">
                 We are a team of dedicated ICT professionals with a passion for technology and a commitment to our clients&apos; success.
               </p>

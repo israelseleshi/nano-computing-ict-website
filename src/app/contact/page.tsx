@@ -28,9 +28,9 @@ export default function ContactPage() {
               <Phone className="w-6 h-6 text-primary" />
               <span>+880 123 456 7890</span>
             </a>
-            <a href="mailto:info@nanovision.com" className="flex items-center gap-4 text-muted-foreground hover:text-primary">
+            <a href="mailto:info@nanocomputingict.com" className="flex items-center gap-4 text-muted-foreground hover:text-primary">
               <Mail className="w-6 h-6 text-primary" />
-              <span>info@nanovision.com</span>
+              <span>info@nanocomputingict.com</span>
             </a>
             <div className="flex items-start gap-4 text-muted-foreground">
               <MapPin className="w-6 h-6 text-primary mt-1 flex-shrink-0" />

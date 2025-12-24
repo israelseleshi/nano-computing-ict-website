@@ -101,7 +101,7 @@ export default function ContactForm() {
             <FormItem>
               <FormLabel>Full Name</FormLabel>
               <FormControl>
-                <Input placeholder="John Doe" {...field} />
+                <Input placeholder="Abebe Bikila" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -114,7 +114,7 @@ export default function ContactForm() {
             <FormItem>
               <FormLabel>Email Address</FormLabel>
               <FormControl>
-                <Input placeholder="john.doe@example.com" {...field} />
+                <Input placeholder="abebe.bikila@example.com" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
